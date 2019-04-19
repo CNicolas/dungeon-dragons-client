@@ -1,5 +1,5 @@
-import { Selector, State } from '@ngxs/store'
 import { Player } from '@dungeon-dragons-model/player'
+import { Selector, State } from '@ngxs/store'
 import { PlayerStateModel } from './player.state.model'
 
 @State<PlayerStateModel>({
