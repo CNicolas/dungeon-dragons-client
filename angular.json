@@ -4,10 +4,10 @@
   "newProjectRoot": "projects",
   "projects": {
     "dungeon-dragons-client": {
-      "root": "",
-      "sourceRoot": "src",
+      "root": "app/dungeon-dragons-client",
+      "sourceRoot": "app/dungeon-dragons-client/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "dd",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -17,17 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dungeon-dragons-client",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
+            "outputPath": "dist/app/dungeon-dragons-client",
+            "index": "app/dungeon-dragons-client/src/index.html",
+            "main": "app/dungeon-dragons-client/src/main.ts",
+            "polyfills": "app/dungeon-dragons-client/src/polyfills.ts",
+            "tsConfig": "app/dungeon-dragons-client/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "app/dungeon-dragons-client/src/favicon.ico",
+              "app/dungeon-dragons-client/src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "app/dungeon-dragons-client/src/styles/styles.scss"
             ],
             "scripts": []
           },
@@ -35,8 +35,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "app/dungeon-dragons-client/src/environments/environment.ts",
+                  "with": "app/dungeon-dragons-client/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -78,17 +78,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "app/dungeon-dragons-client/src/test.ts",
+            "polyfills": "app/dungeon-dragons-client/src/polyfills.ts",
+            "tsConfig": "app/dungeon-dragons-client/tsconfig.spec.json",
+            "karmaConfig": "app/dungeon-dragons-client/src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "app/dungeon-dragons-client/src/styles/styles.scss"
             ],
             "scripts": [],
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "app/dungeon-dragons-client/src/favicon.ico",
+              "app/dungeon-dragons-client/src/assets"
             ]
           }
         },
@@ -96,8 +96,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "app/dungeon-dragons-client/tsconfig.app.json",
+              "app/dungeon-dragons-client/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -105,6 +105,11 @@
           }
         }
       }
+    },
+    "dungeon-dragons-model": {
+      "root": "libs/dungeon-dragons-model",
+      "sourceRoot": "libs/dungeon-dragons-model/src",
+      "projectType": "library"
     },
     "dungeon-dragons-client-e2e": {
       "root": "e2e/",

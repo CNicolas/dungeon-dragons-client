@@ -2,7 +2,6 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",
@@ -16,6 +15,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
-  }
+    ],
+    "paths": {
+      "@dungeon-dragons-model": [
+        "libs/dungeon-dragons-model/src/index.ts"
+      ],
+      "@dungeon-dragons-model/*": [
+        "libs/dungeon-dragons-model/src/lib/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
 }

@@ -1,14 +1,14 @@
 {
-  "extends": "../tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../out-tsc/spec",
+    "outDir": "../dist/out-tsc/app/dungeon-dragons-client",
     "types": [
       "jasmine",
       "node"
     ]
   },
   "files": [
-    "test.ts",
+    "src/test.ts",
     "polyfills.ts"
   ],
   "include": [
