@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<!--suppress HtmlUnknownAnchorTarget -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer
+               class="sidenav"
+               fixedInViewport="true"
+               [attr.role]="isHandset ? 'dialog' : 'navigation'"
+               [mode]="isHandset ? 'over' : 'side'"
+               [opened]="!isHandset">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a routerLink="/"
+         routerLinkActive="active"
+         mat-list-item
+         (click)="closeDrawer()">Accueil</a>
+      <a routerLink="/characteristics"
+         routerLinkActive="active"
+         mat-list-item
+         (click)="closeDrawer()">Characteristics</a>
+      <a routerLink="/actions"
+         routerLinkActive="active"
+         mat-list-item
+         (click)="closeDrawer()">Actions</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button *ngIf="isHandset"
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

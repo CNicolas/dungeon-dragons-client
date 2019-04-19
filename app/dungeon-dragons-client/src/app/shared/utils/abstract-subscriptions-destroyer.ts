@@ -1,12 +1,15 @@
 import { OnDestroy } from '@angular/core'
 import { Subscription } from 'rxjs'
 
-export abstract class AbstractSubscriptionDestroyer implements OnDestroy {
+export abstract class AbstractSubscriptionsDestroyer implements OnDestroy {
+  private subscriptions: Subscription[] = []
 
-  protected subscriptions: Subscription[] = []
-
-  public ngOnDestroy(): void {
+  ngOnDestroy() {
     this.subscriptions.forEach(unsubscribe)
+  }
+
+  protected willUnsubscribe(...subscriptions: Subscription[]) {
+    this.subscriptions.push(...subscriptions)
   }
 }
 
