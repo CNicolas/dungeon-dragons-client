@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+<button mat-button
+        (click)="fetchPlayers()">Fetch players
+</button>
+
+<form [formGroup]="createPlayerForm"
+      (ngSubmit)="createPlayer()">
+  <input matInput
+         placeholder="Name"
+         formControlName="name">
+
+  <button mat-button
+          type="submit">Submit
+  </button>
+</form>
+
+
+{{ players | json }}
