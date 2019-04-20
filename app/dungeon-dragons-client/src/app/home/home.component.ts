@@ -1,18 +1,19 @@
-import { Component, OnInit } from '@angular/core'
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { Player } from '@dungeon-dragons-model/player'
-import { Store } from '@ngxs/store'
-import { PlayerState } from '../shared/store'
-import { CreatePlayer, FetchPlayers } from '../shared/store/player.actions'
+import {Component} from '@angular/core'
+import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import {Player} from '@dungeon-dragons-model/player'
+import {Select, Store} from '@ngxs/store'
+import {PlayerState} from '../shared/store'
+import {CreatePlayer, FetchPlayers} from '../shared/store/player.actions'
+import {Observable} from 'rxjs'
 
 @Component({
   selector: 'dd-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  players: Player[]
+  @Select(PlayerState.players) players$: Observable<Player[]>
 
   readonly createPlayerForm: FormGroup
 
@@ -21,11 +22,6 @@ export class HomeComponent implements OnInit {
     this.createPlayerForm = formBuilder.group({
       name: ['', [Validators.required]]
     })
-  }
-
-  ngOnInit() {
-    this.store.select(PlayerState.players)
-      .subscribe(players => this.players = players)
   }
 
   createPlayer() {

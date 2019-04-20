@@ -4,7 +4,7 @@
 
 <form [formGroup]="createPlayerForm"
       (ngSubmit)="createPlayer()">
-  <input matInput
+  <input mat-input
          placeholder="Name"
          formControlName="name">
 
@@ -14,4 +14,4 @@
 </form>
 
 
-{{ players | json }}
+{{ players$ | async | json }}
