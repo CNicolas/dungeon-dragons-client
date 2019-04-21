@@ -1,17 +1,22 @@
-<button mat-button
-        (click)="fetchPlayers()">Fetch players
-</button>
-
 <form [formGroup]="createPlayerForm"
-      (ngSubmit)="createPlayer()">
-  <input mat-input
-         placeholder="Name"
-         formControlName="name">
+      (ngSubmit)="createPlayer()"
+      fxLayout="row">
+  <mat-form-field fxFlex="80">
+    <input matInput
+           placeholder="Name"
+           formControlName="name">
+  </mat-form-field>
 
-  <button mat-button
-          type="submit">Submit
-  </button>
+  <div fxFlex>
+    <button mat-button
+            type="submit"
+            color="primary"
+            [disabled]="createPlayerForm.invalid"
+            fxFlex>Submit
+    </button>
+  </div>
 </form>
 
-
-{{ players$ | async | json }}
+<mat-list>
+  <mat-list-item *ngFor="let player of players$ | async">{{ player.name }}</mat-list-item>
+</mat-list>
