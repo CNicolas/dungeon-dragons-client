@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { Player } from '@dungeon-dragons-model/player'
-import { Observable } from 'rxjs'
+import {HttpClient} from '@angular/common/http'
+import {Injectable} from '@angular/core'
+import {Player} from '@dungeon-dragons-model/player'
+import {Observable} from 'rxjs'
+import {Endpoints} from '../utils/endpoints.enum'
 
 @Injectable()
 export class PlayerGateway {
@@ -9,10 +10,10 @@ export class PlayerGateway {
   }
 
   fetchPlayers(): Observable<Player[]> {
-    return this.httpClient.get<Player[]>('/player')
+    return this.httpClient.get<Player[]>(Endpoints.player)
   }
 
   createPlayer(player: Player): Observable<Player> {
-    return this.httpClient.post<Player>('/player', player)
+    return this.httpClient.post<Player>(Endpoints.player, player)
   }
 }
