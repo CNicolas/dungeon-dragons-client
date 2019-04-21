@@ -1,0 +1,18 @@
+<form [formGroup]="createPlayerForm"
+      (ngSubmit)="createPlayer()"
+      fxLayout="row">
+  <mat-form-field fxFlex="80">
+    <input matInput
+           placeholder="Nom du personnage"
+           formControlName="name">
+  </mat-form-field>
+
+  <div fxFlex>
+    <button mat-button
+            type="submit"
+            color="primary"
+            [disabled]="createPlayerForm.invalid"
+            fxFlex>Submit
+    </button>
+  </div>
+</form>

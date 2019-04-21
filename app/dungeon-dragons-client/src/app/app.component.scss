@@ -1,8 +1,9 @@
 .mat-sidenav-container {
   height: 100%;
 
-  .mat-drawer-side {
+  .mat-drawer-side, .mat-drawer-over {
     border-right: 0;
+    width: 256px;
   }
 
   .page_content {
