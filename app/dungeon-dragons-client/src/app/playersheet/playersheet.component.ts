@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { Player } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
-import { PlayerState } from '../shared/store'
+import { PlayerState } from '../shared/store/player'
 
 @Component({
   selector: 'dd-playersheet',

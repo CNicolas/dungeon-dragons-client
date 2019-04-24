@@ -1,9 +1,11 @@
-import {BreakpointObserver} from '@angular/cdk/layout'
-import {Component, OnInit, ViewChild} from '@angular/core'
-import {MatSidenav} from '@angular/material'
-import {AbstractHandsetObserver} from './shared/utils'
-import {FetchPlayers} from './shared/store/player.actions'
-import {Store} from '@ngxs/store'
+import { BreakpointObserver } from '@angular/cdk/layout'
+import { Component, OnInit, ViewChild } from '@angular/core'
+import { MatSidenav } from '@angular/material'
+import { Select, Store } from '@ngxs/store'
+import { Observable } from 'rxjs'
+import { CoreState } from './shared/store/core/core.state'
+import { FetchPlayers } from './shared/store/player'
+import { AbstractHandsetObserver } from './shared/utils'
 
 @Component({
   selector: 'dd-root',
@@ -11,6 +13,8 @@ import {Store} from '@ngxs/store'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent extends AbstractHandsetObserver implements OnInit {
+
+  @Select(CoreState.toolbarTitle) toolbarTitle$: Observable<string>
 
   @ViewChild('drawer') private drawer: MatSidenav
 

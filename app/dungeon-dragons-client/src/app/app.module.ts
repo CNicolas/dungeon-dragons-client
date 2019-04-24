@@ -9,8 +9,8 @@ import { AppComponent } from './app.component'
 import { CreatePlayerModule } from './create-player/create-player.module'
 import { HomeModule } from './home/home.module'
 import { PlayersheetModule } from './playersheet/playersheet.module'
-import { PlayerState } from './shared/store'
-import { PlayerStoreModule } from './shared/store/player-store.module'
+import { CoreState } from './shared/store/core/core.state'
+import { PlayerState, PlayerStoreModule } from './shared/store/player'
 
 const appModules = [HomeModule, CreatePlayerModule, PlayersheetModule]
 
@@ -25,7 +25,7 @@ const appModules = [HomeModule, CreatePlayerModule, PlayersheetModule]
     MatListModule,
     MatSidenavModule,
     MatToolbarModule,
-    NgxsModule.forRoot([PlayerState]),
+    NgxsModule.forRoot([CoreState, PlayerState]),
     AppRoutingModule,
     PlayerStoreModule,
     ...appModules

@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/r
 import { Player } from '@dungeon-dragons-model/player'
 import { Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
-import { FetchPlayer } from '../shared/store/player.actions'
+import { FetchPlayer } from '../shared/store/player'
 
 @Injectable()
 export class PlayerResolver implements Resolve<Player> {

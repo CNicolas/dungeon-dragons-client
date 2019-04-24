@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { Player } from '@dungeon-dragons-model/player'
 import { Select } from '@ngxs/store'
-import { PlayerState } from '../shared/store'
 import { Observable } from 'rxjs'
+import { PlayerState } from '../shared/store/player'
 
 @Component({
   selector: 'dd-home',

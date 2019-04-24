@@ -2,6 +2,7 @@ import { Player } from '@dungeon-dragons-model/player'
 import { Action, Selector, State, StateContext } from '@ngxs/store'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
+import { SetToolbarTitle } from '../core/core.actions'
 import { CreatePlayer, FetchPlayer, FetchPlayers } from './player.actions'
 import { PlayerGateway } from './player.gateway'
 import { PlayerStateModel } from './player.state.model'
@@ -31,7 +32,10 @@ export class PlayerState {
   fetchPlayer(ctx: StateContext<PlayerStateModel>, action: FetchPlayer): Observable<{}> {
     return this.playerGateway.fetchPlayer(action.playerId)
       .pipe(
-        tap((player: Player) => ctx.patchState({ player }))
+        tap((player: Player) => {
+          ctx.patchState({ player })
+          ctx.dispatch(new SetToolbarTitle(player.name))
+        })
       )
   }
 

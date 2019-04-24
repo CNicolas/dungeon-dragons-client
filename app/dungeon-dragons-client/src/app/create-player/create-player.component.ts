@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { CreatePlayer } from '../shared/store/player.actions'
 import { Store } from '@ngxs/store'
+import { CreatePlayer } from '../shared/store/player'
 
 @Component({
   selector: 'dd-create-player',

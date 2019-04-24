@@ -28,6 +28,7 @@
               (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
+      {{ toolbarTitle$ | async }}
     </mat-toolbar>
 
     <div class="page_content">

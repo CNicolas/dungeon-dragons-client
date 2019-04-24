@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterModule } from '@angular/router'
 import { NgxsModule } from '@ngxs/store'
-import { PlayerState } from '../shared/store'
+import { PlayerState } from '../shared/store/player'
 import { HomeComponent } from './home.component'
 
 @NgModule({
