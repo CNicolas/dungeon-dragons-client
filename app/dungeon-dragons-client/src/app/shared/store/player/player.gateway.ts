@@ -21,4 +21,8 @@ export class PlayerGateway {
   createPlayer(player: Player): Observable<Player> {
     return this.httpClient.post<Player>(Endpoints.players, player)
   }
+
+  updatePlayer(player: Player): Observable<Player> {
+    return this.httpClient.put<Player>(Endpoints.players, player)
+  }
 }

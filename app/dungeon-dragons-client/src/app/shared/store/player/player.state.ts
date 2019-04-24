@@ -1,9 +1,10 @@
+import { Router } from '@angular/router'
 import { Player } from '@dungeon-dragons-model/player'
 import { Action, Selector, State, StateContext } from '@ngxs/store'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
 import { SetToolbarTitle } from '../core/core.actions'
-import { CreatePlayer, FetchPlayer, FetchPlayers } from './player.actions'
+import { CreatePlayer, FetchPlayer, FetchPlayers, UpdatePlayer } from './player.actions'
 import { PlayerGateway } from './player.gateway'
 import { PlayerStateModel } from './player.state.model'
 
@@ -15,7 +16,8 @@ import { PlayerStateModel } from './player.state.model'
   }
 })
 export class PlayerState {
-  constructor(private readonly playerGateway: PlayerGateway) {
+  constructor(private readonly router: Router,
+              private readonly playerGateway: PlayerGateway) {
   }
 
   @Selector()
@@ -51,7 +53,21 @@ export class PlayerState {
   createPlayer(ctx: StateContext<PlayerStateModel>, action: CreatePlayer): Observable<{}> {
     return this.playerGateway.createPlayer(action.player)
       .pipe(
-        tap(() => ctx.dispatch(new FetchPlayers()))
+        tap((player: Player) => {
+          ctx.dispatch(new FetchPlayers())
+          this.router.navigate(['/player', player.id])
+        })
+      )
+  }
+
+  @Action(UpdatePlayer)
+  updatePlayer(ctx: StateContext<PlayerStateModel>, action: UpdatePlayer): Observable<{}> {
+    return this.playerGateway.updatePlayer(action.player)
+      .pipe(
+        tap((player: Player) => {
+          ctx.dispatch(new FetchPlayers())
+          ctx.dispatch(new SetToolbarTitle(player.name))
+        })
       )
   }
 }

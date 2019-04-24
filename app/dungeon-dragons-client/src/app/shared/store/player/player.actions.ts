@@ -17,3 +17,10 @@ export class CreatePlayer {
   constructor(public player: Player) {
   }
 }
+
+export class UpdatePlayer {
+  static readonly type = '[Player] Update player'
+
+  constructor(public player: Player) {
+  }
+}
