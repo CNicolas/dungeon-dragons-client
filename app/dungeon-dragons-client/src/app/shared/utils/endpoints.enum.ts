@@ -1,3 +1,4 @@
 export enum Endpoints {
-  player = '/api/player'
+  players = '/api/player',
+  player = '/api/player/:playerId'
 }

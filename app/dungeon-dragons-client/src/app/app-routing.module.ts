@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import { HomeComponent } from './home/home.component'
 import { CreatePlayerComponent } from './create-player/create-player.component'
+import { HomeComponent } from './home/home.component'
+import { PlayerResolver } from './playersheet/player.resolver'
+import { PlayersheetComponent } from './playersheet/playersheet.component'
 
 const routes: Routes = [
   {
@@ -12,7 +14,14 @@ const routes: Routes = [
     path: 'create-player',
     component: CreatePlayerComponent
   },
-  {path: '**', redirectTo: '/'}
+  {
+    path: 'player/:playerId',
+    component: PlayersheetComponent,
+    resolve: {
+      player: PlayerResolver
+    }
+  },
+  { path: '**', redirectTo: '/' }
 ]
 
 @NgModule({

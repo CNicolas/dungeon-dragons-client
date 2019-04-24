@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core'
-import {HomeComponent} from './home.component'
-import {BrowserModule} from '@angular/platform-browser'
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {ReactiveFormsModule} from '@angular/forms'
-import {MatButtonModule, MatIconModule, MatInputModule, MatListModule} from '@angular/material'
-import {NgxsModule} from '@ngxs/store'
-import {PlayerState} from '../shared/store'
-import {FlexLayoutModule} from '@angular/flex-layout'
+import { NgModule } from '@angular/core'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { ReactiveFormsModule } from '@angular/forms'
+import { MatButtonModule, MatIconModule, MatInputModule, MatListModule, MatRippleModule } from '@angular/material'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { RouterModule } from '@angular/router'
+import { NgxsModule } from '@ngxs/store'
+import { PlayerState } from '../shared/store'
+import { HomeComponent } from './home.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import {FlexLayoutModule} from '@angular/flex-layout'
     MatIconModule,
     MatInputModule,
     MatListModule,
-    NgxsModule.forFeature([PlayerState])
+    MatRippleModule,
+    NgxsModule.forFeature([PlayerState]),
+    RouterModule
   ]
 })
 export class HomeModule {

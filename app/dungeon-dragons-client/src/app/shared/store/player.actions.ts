@@ -1,5 +1,12 @@
 import { Player } from '@dungeon-dragons-model/player'
 
+export class FetchPlayer {
+  static readonly type = '[Player] Fetch player'
+
+  constructor(public playerId: number) {
+  }
+}
+
 export class FetchPlayers {
   static readonly type = '[Player] Fetch players'
 }

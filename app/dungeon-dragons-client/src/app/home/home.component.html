@@ -1,3 +1,5 @@
 <mat-list>
-  <mat-list-item *ngFor="let player of players$ | async">{{ player.name }}</mat-list-item>
+  <mat-list-item *ngFor="let player of players$ | async"
+                 routerLink="/player/{{player.id}}"
+                 matRipple>{{ player.name }}</mat-list-item>
 </mat-list>
