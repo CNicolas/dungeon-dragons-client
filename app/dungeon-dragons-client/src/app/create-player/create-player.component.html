@@ -1,19 +1,32 @@
 <form [formGroup]="createPlayerForm"
       (ngSubmit)="createPlayer()"
-      fxLayout="row"
-      fxLayoutAlign="center center">
-  <mat-form-field fxFlex="80"
-                  fxFlex.xs="70">
+      fxLayout="row wrap"
+      fxLayoutAlign="">
+  <mat-form-field fxFlex="60"
+                  fxFlex.xs="100">
     <input matInput
            placeholder="Nom du personnage"
-           formControlName="name">
+           formControlName="name"
+           required>
+  </mat-form-field>
+  <mat-form-field fxFlex="40"
+                  fxFlex.xs="100">
+    <mat-select formControlName="race"
+                placeholder="Race"
+                required>
+      <mat-option *ngFor="let race of races | keyvalue | sort:'value'"
+                  [value]="race.key">{{ race.value }}</mat-option>
+    </mat-select>
   </mat-form-field>
 
-  <div fxFlex>
-    <button mat-button
+  <div fxFlex="100"
+       fxLayoutAlign="end">
+    <button mat-raised-button
             type="submit"
             color="primary"
-            [disabled]="createPlayerForm.invalid">Submit
+            [disabled]="createPlayerForm.invalid">
+      <mat-icon>person_add</mat-icon>
+      Créer
     </button>
   </div>
 </form>
