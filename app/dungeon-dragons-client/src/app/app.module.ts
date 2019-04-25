@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxsModule } from '@ngxs/store'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { DdCoreModule } from './core/dd-core.module'
 import { CreatePlayerModule } from './create-player/create-player.module'
 import { HomeModule } from './home/home.module'
 import { PlayersheetModule } from './playersheet/playersheet.module'
@@ -27,6 +28,7 @@ const appModules = [HomeModule, CreatePlayerModule, PlayersheetModule]
     MatSidenavModule,
     MatToolbarModule,
     NgxsModule.forRoot([CoreState, PlayerState]),
+    DdCoreModule,
     AppRoutingModule,
     PlayerStoreModule,
     ...appModules

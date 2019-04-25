@@ -5,8 +5,8 @@ import { Select, Store } from '@ngxs/store'
 import * as deepEqual from 'fast-deep-equal'
 import { Observable } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
+import { AbstractSubscriptionsDestroyer } from '../../core'
 import { PlayerState, UpdatePlayer } from '../../shared/store/player'
-import { AbstractSubscriptionsDestroyer } from '../../shared/utils'
 
 @Component({
   selector: 'dd-player-characteristics',

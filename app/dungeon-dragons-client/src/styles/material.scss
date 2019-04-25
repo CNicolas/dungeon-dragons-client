@@ -15,3 +15,13 @@
 *:focus {
   outline: none !important;
 }
+
+.mat-snack-bar-container {
+  &.snack-bar-success {
+    //background-color: $color-success;
+  }
+
+  &.snack-bar-error {
+    //background-color: $color-error;
+  }
+}

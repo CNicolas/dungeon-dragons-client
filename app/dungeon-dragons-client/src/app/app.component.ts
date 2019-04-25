@@ -4,9 +4,9 @@ import { MatSidenav } from '@angular/material'
 import { Player } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
+import { AbstractHandsetObserver } from './core'
 import { CoreState } from './shared/store/core/core.state'
 import { FetchPlayers, PlayerState } from './shared/store/player'
-import { AbstractHandsetObserver } from './shared/utils'
 
 @Component({
   selector: 'dd-root',
