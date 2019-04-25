@@ -64,9 +64,10 @@ export class PlayerState {
 
   @Action(UpdatePlayer)
   updatePlayer(ctx: StateContext<PlayerStateModel>, action: UpdatePlayer): Observable<{}> {
-    return this.playerGateway.updatePlayer(action.player)
+    return this.playerGateway.updatePlayer({ ...ctx.getState().player, ...action.player })
       .pipe(
         tap((player: Player) => {
+          ctx.patchState({ player })
           ctx.dispatch(new FetchPlayers())
           ctx.dispatch(new SetToolbarTitle(player.name))
         })

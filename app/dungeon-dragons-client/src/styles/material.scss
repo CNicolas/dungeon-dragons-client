@@ -25,3 +25,12 @@
     //background-color: $color-error;
   }
 }
+
+.mat-expansion-panel {
+  .mat-expansion-panel-body {
+    @media (max-device-width: 480px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

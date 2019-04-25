@@ -21,6 +21,6 @@ export class CreatePlayer {
 export class UpdatePlayer {
   static readonly type = '[Player] Update player'
 
-  constructor(public player: Player) {
+  constructor(public player: Partial<Player>) {
   }
 }

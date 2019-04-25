@@ -1,51 +1,56 @@
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <span>Armes</span>
-    </mat-panel-title>
-  </mat-expansion-panel-header>
+<ng-container *ngIf="(player$ | async) as player">
 
-  <!--  CONTENT -->
-  <ng-template matExpansionPanelContent>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Armes</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  </ng-template>
-</mat-expansion-panel>
+    <!--  CONTENT -->
+    <ng-template matExpansionPanelContent>
+      <dd-player-inventory-weapons [weapons]="player.weapons"
+                                   (update)="updatePlayerWeapons($event)"></dd-player-inventory-weapons>
+    </ng-template>
+  </mat-expansion-panel>
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <span>Armures et Bijoux</span>
-    </mat-panel-title>
-  </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Armures et Bijoux</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  <!--  CONTENT -->
-  <ng-template matExpansionPanelContent>
+    <!--  CONTENT -->
+    <ng-template matExpansionPanelContent>
 
-  </ng-template>
-</mat-expansion-panel>
+    </ng-template>
+  </mat-expansion-panel>
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <span>Consommables</span>
-    </mat-panel-title>
-  </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Consommables</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  <!--  CONTENT -->
-  <ng-template matExpansionPanelContent>
+    <!--  CONTENT -->
+    <ng-template matExpansionPanelContent>
 
-  </ng-template>
-</mat-expansion-panel>
+    </ng-template>
+  </mat-expansion-panel>
 
-<mat-expansion-panel>
-  <mat-expansion-panel-header>
-    <mat-panel-title>
-      <span>Autre</span>
-    </mat-panel-title>
-  </mat-expansion-panel-header>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <span>Autre</span>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  <!--  CONTENT -->
-  <ng-template matExpansionPanelContent>
+    <!--  CONTENT -->
+    <ng-template matExpansionPanelContent>
 
-  </ng-template>
-</mat-expansion-panel>
+    </ng-template>
+  </mat-expansion-panel>
+
+</ng-container>

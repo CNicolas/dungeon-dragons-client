@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core'
 @Pipe({
   name: 'sort'
 })
-export class SortPipe<T> implements PipeTransform {
+export class SortPipe<T extends {}> implements PipeTransform {
   transform(entries: T[], ...args: string[]): T[] {
     if (!!args[0]) {
       return entries.sort(compareObjectsByField(args[0]))
