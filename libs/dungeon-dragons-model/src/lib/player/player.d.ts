@@ -1,4 +1,4 @@
-import { Weapon } from '@dungeon-dragons-model/inventory'
+import { Equipment, Weapon } from '@dungeon-dragons-model/inventory'
 
 export interface Player {
   id: number
@@ -6,4 +6,5 @@ export interface Player {
   race: string
   level: number
   weapons: Weapon[]
+  equipments: Equipment[]
 }

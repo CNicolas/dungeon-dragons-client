@@ -7,7 +7,6 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <!--  CONTENT -->
     <ng-template matExpansionPanelContent>
       <dd-player-inventory-weapons [weapons]="player.weapons"
                                    (update)="updatePlayerWeapons($event)"></dd-player-inventory-weapons>
@@ -17,13 +16,13 @@
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <span>Armures et Bijoux</span>
+        <span>Équipements</span>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <!--  CONTENT -->
     <ng-template matExpansionPanelContent>
-
+      <dd-player-inventory-equipments [equipments]="player.equipments"
+                                      (update)="updatePlayerEquipments($event)"></dd-player-inventory-equipments>
     </ng-template>
   </mat-expansion-panel>
 
@@ -34,7 +33,6 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <!--  CONTENT -->
     <ng-template matExpansionPanelContent>
 
     </ng-template>
@@ -47,7 +45,6 @@
       </mat-panel-title>
     </mat-expansion-panel-header>
 
-    <!--  CONTENT -->
     <ng-template matExpansionPanelContent>
 
     </ng-template>

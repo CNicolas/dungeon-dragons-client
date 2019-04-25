@@ -1,0 +1,47 @@
+<div fxLayout="row wrap">
+  <table mat-table
+         [dataSource]="equipments"
+         fxFlex="100"
+         id="equipments-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell
+          *matHeaderCellDef>Nom
+      </th>
+      <td mat-cell
+          *matCellDef="let equipment">{{equipment.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="armor">
+      <th mat-header-cell
+          *matHeaderCellDef>Classe d'armure
+      </th>
+      <td mat-cell
+          *matCellDef="let equipment">+{{equipment.armor}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="special">
+      <th mat-header-cell
+          *matHeaderCellDef>Special
+      </th>
+      <td mat-cell
+          *matCellDef="let equipment">{{equipment.special}}</td>
+    </ng-container>
+
+    <tr mat-header-row
+        *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+        *matRowDef="let equipment; columns: displayedColumns; let i = index"
+        (click)="openEquipmentEditionDialog(equipment, i)"></tr>
+  </table>
+
+  <div fxFlex="100"
+       fxLayoutAlign="end">
+    <button mat-raised-button
+            type="submit"
+            color="primary"
+            (click)="openEquipmentCreationDialog()">
+      <mat-icon>add</mat-icon>
+      Créer un équipement
+    </button>
+  </div>
+</div>

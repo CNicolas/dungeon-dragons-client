@@ -1,0 +1,52 @@
+<form [formGroup]="equipmentForm">
+
+  <h1 mat-dialog-title>Créer un équipement</h1>
+
+  <mat-dialog-content fxLayout="row wrap">
+    <mat-form-field fxFlex
+                    fxFlex.xs="100">
+      <input matInput
+             formControlName="name"
+             placeholder="Nom de l'équipement"
+             required>
+    </mat-form-field>
+
+    <mat-form-field fxFlex
+                    fxFlex.xs="50">
+      <input matInput
+             formControlName="armor"
+             placeholder="Classe d'armure"
+             type="number"
+             min="0"
+             required>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="100">
+      <textarea matInput
+                formControlName="special"
+                placeholder="Spécial"
+                matTextareaAutosize></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions fxLayout="row wrap">
+    <div fxFlex="100"
+         fxLayoutAlign="end">
+      <button *ngIf="equipment"
+              mat-button
+              color="warn"
+              [mat-dialog-close]="-1">
+        <mat-icon>delete</mat-icon>
+        Supprimer
+      </button>
+      <button mat-button
+              color="primary"
+              [mat-dialog-close]="equipmentForm.getRawValue()"
+              [disabled]="equipmentForm.invalid">
+        <mat-icon>save</mat-icon>
+        Enregistrer
+      </button>
+    </div>
+  </mat-dialog-actions>
+
+</form>

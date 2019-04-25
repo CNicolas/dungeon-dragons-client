@@ -7,3 +7,9 @@ export interface Weapon {
   damage: number
   special: string
 }
+
+export interface Equipment {
+  name: string
+  armor: number
+  special: string
+}
