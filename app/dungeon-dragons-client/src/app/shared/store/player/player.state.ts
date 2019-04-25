@@ -1,3 +1,4 @@
+import { NgZone } from '@angular/core'
 import { Router } from '@angular/router'
 import { Player } from '@dungeon-dragons-model/player'
 import { Action, Selector, State, StateContext } from '@ngxs/store'
@@ -17,6 +18,7 @@ import { PlayerStateModel } from './player.state.model'
 })
 export class PlayerState {
   constructor(private readonly router: Router,
+              private readonly ngZone: NgZone,
               private readonly playerGateway: PlayerGateway) {
   }
 
@@ -55,7 +57,7 @@ export class PlayerState {
       .pipe(
         tap((player: Player) => {
           ctx.dispatch(new FetchPlayers())
-          this.router.navigate(['/player', player.id])
+          this.ngZone.run(() => this.router.navigate(['/player', player.id, 'characteristics']))
         })
       )
   }

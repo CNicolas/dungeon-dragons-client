@@ -4,3 +4,16 @@
     cursor: pointer;
   }
 }
+
+.mat-fab {
+  position: fixed;
+  @media (max-device-width: 480px) {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  @media (min-device-width: 481px) {
+    right: 16px;
+    top: 35px;
+  }
+}

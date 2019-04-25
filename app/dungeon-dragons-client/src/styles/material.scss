@@ -12,10 +12,6 @@
   margin-bottom: 10px;
 }
 
-.mat-list {
-  .mat-list-item {
-    &:focus {
-      outline: none !important;
-    }
-  }
+*:focus {
+  outline: none !important;
 }

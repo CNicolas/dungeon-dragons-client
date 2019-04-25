@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core'
-import { MatButtonModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material'
+import { MatButtonModule, MatIconModule, MatListModule, MatRippleModule, MatSidenavModule, MatToolbarModule } from '@angular/material'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxsModule } from '@ngxs/store'
@@ -23,6 +23,7 @@ const appModules = [HomeModule, CreatePlayerModule, PlayersheetModule]
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatRippleModule,
     MatSidenavModule,
     MatToolbarModule,
     NgxsModule.forRoot([CoreState, PlayerState]),

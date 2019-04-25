@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core'
-import { RouterModule, Routes } from '@angular/router'
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router'
 import { CreatePlayerComponent } from './create-player/create-player.component'
 import { HomeComponent } from './home/home.component'
 import { PlayerResolver } from './playersheet/player.resolver'
-import { PlayersheetComponent } from './playersheet/playersheet.component'
+import { PlayersheetModule } from './playersheet/playersheet.module'
 
 const routes: Routes = [
   {
@@ -16,16 +16,21 @@ const routes: Routes = [
   },
   {
     path: 'player/:playerId',
-    component: PlayersheetComponent,
     resolve: {
       player: PlayerResolver
-    }
+    },
+    loadChildren: () => PlayersheetModule
   },
   { path: '**', redirectTo: '/' }
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+      useHash: true
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

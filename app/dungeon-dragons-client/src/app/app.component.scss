@@ -7,6 +7,11 @@
   }
 
   .page_content {
-    padding: 10px 16px;
+    @media (max-device-width: 480px) {
+      padding: 10px 16px;
+    }
+    @media (min-device-width: 481px) {
+      padding: 10px 32px;
+    }
   }
 }

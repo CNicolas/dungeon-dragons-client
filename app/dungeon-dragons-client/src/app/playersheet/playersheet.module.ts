@@ -5,16 +5,17 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { MatInputModule, MatTabsModule } from '@angular/material'
 import { PlayerCharacteristicsComponent } from './player-characteristics/player-characteristics.component'
 import { PlayerResolver } from './player.resolver'
-import { PlayersheetComponent } from './playersheet.component'
+import { PlayersheetRoutingModule } from './playersheet-routing.module'
 
 @NgModule({
-  declarations: [PlayersheetComponent, PlayerCharacteristicsComponent],
+  declarations: [PlayerCharacteristicsComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MatTabsModule,
     FlexModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule,
+    PlayersheetRoutingModule
   ],
   providers: [PlayerResolver]
 })

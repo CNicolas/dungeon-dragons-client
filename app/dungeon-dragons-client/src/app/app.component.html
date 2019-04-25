@@ -1,34 +1,48 @@
 <!--suppress HtmlUnknownAnchorTarget -->
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer
+  <mat-sidenav *ngIf="player"
+               #drawer
                class="sidenav"
                fixedInViewport="true"
                [attr.role]="isHandset ? 'dialog' : 'navigation'"
                [mode]="isHandset ? 'over' : 'side'"
                [opened]="!isHandset">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary"
+                 routerLink="/"
+                 matRipple
+                 (click)="closeDrawer()">Accueil
+    </mat-toolbar>
     <mat-nav-list>
-      <a routerLink="/"
+      <a routerLink="/player/{{player.id}}/characteristics"
          routerLinkActive="active"
          mat-list-item
-         (click)="closeDrawer()">Accueil</a>
-      <a routerLink="/create-player"
+         (click)="closeDrawer()">Caractéristiques</a>
+      <a routerLink="/player/{{player.id}}/aptitudes"
          routerLinkActive="active"
          mat-list-item
-         (click)="closeDrawer()">Créer un personnage</a>
+         (click)="closeDrawer()">Aptitudes et Maîtrises</a>
+      <a routerLink="/player/{{player.id}}/actions"
+         routerLinkActive="active"
+         mat-list-item
+         (click)="closeDrawer()">Actions</a>
+      <a routerLink="/player/{{player.id}}/inventory"
+         routerLinkActive="active"
+         mat-list-item
+         (click)="closeDrawer()">Inventaire</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button *ngIf="isHandset"
+      <button *ngIf="isHandset && player"
               type="button"
               aria-label="Toggle sidenav"
               mat-icon-button
               (click)="drawer.toggle()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      {{ toolbarTitle$ | async }}
+      <div routerLink="/"
+           matRipple>{{ toolbarTitle$ | async }}</div>
     </mat-toolbar>
 
     <div class="page_content">
