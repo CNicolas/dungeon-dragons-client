@@ -68,7 +68,6 @@ export class PlayerState {
       .pipe(
         tap((player: Player) => {
           ctx.patchState({ player })
-          ctx.dispatch(new FetchPlayers())
           ctx.dispatch(new SetToolbarTitle(player.name))
         })
       )
