@@ -1,2 +1,2 @@
-export { Weapon, Equipment, Expandable } from './inventory'
+export { Weapon, Equipment, Expandable, OtherItem } from './inventory'
 export { WeaponRange } from './range.enum'

@@ -18,6 +18,7 @@ import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } f
 import { ExpandableEditionDialogComponent, PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
 import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from './player-inventory-weapons'
 import { PlayerInventoryComponent } from './player-inventory.component'
+import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
 
 @NgModule({
   declarations: [
@@ -27,9 +28,16 @@ import { PlayerInventoryComponent } from './player-inventory.component'
     PlayerInventoryEquipmentsComponent,
     EquipmentEditionDialogComponent,
     PlayerInventoryExpandablesComponent,
-    ExpandableEditionDialogComponent
+    ExpandableEditionDialogComponent,
+    PlayerInventoryOtherItemsComponent,
+    OtherItemEditionDialogComponent
   ],
-  entryComponents: [WeaponEditionDialogComponent, EquipmentEditionDialogComponent, ExpandableEditionDialogComponent],
+  entryComponents: [
+    WeaponEditionDialogComponent,
+    EquipmentEditionDialogComponent,
+    ExpandableEditionDialogComponent,
+    OtherItemEditionDialogComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

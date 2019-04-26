@@ -19,3 +19,8 @@ export interface Expandable {
   count: number
   special: string
 }
+
+export interface OtherItem {
+  name: string
+  special: string
+}

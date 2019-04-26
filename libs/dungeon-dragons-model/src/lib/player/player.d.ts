@@ -1,4 +1,4 @@
-import { Equipment, Expandable, Weapon } from '@dungeon-dragons-model/inventory'
+import { Equipment, Expandable, OtherItem, Weapon } from '@dungeon-dragons-model/inventory'
 
 export interface Player {
   id: number
@@ -8,4 +8,5 @@ export interface Player {
   weapons: Weapon[]
   equipments: Equipment[]
   expandables: Expandable[]
+  otherItems: OtherItem[]
 }
