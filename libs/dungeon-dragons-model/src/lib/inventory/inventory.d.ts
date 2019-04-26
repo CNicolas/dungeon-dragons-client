@@ -13,3 +13,9 @@ export interface Equipment {
   armor: number
   special: string
 }
+
+export interface Expandable {
+  name: string
+  count: number
+  special: string
+}

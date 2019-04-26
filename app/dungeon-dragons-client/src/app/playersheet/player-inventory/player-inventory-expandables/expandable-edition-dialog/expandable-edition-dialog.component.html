@@ -1,43 +1,23 @@
-<form [formGroup]="weaponForm">
+<form [formGroup]="expandableForm">
 
-  <h1 mat-dialog-title>Arme</h1>
+  <h1 mat-dialog-title>Consommable</h1>
 
   <mat-dialog-content fxLayout="row wrap">
     <mat-form-field fxFlex
                     fxFlex.xs="100">
       <input matInput
              formControlName="name"
-             placeholder="Nom de l'arme"
-             required>
-    </mat-form-field>
-
-    <mat-form-field fxFlex
-                    fxFlex.xs="100">
-      <mat-select formControlName="range"
-                  placeholder="Portée"
-                  required>
-        <mat-option *ngFor="let range of weaponRanges | enumKeyValue"
-                    [value]="range.key">{{ range.value }}</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field fxFlex
-                    fxFlex.xs="50">
-      <input matInput
-             formControlName="touch"
-             placeholder="Toucher"
-             type="number"
-             min="0"
+             placeholder="Nom de l'équipement"
              required>
     </mat-form-field>
 
     <mat-form-field fxFlex
                     fxFlex.xs="50">
       <input matInput
-             formControlName="damage"
-             placeholder="Dégâts"
+             formControlName="count"
+             placeholder="Nombre"
              type="number"
-             min="0"
+             min="1"
              required>
     </mat-form-field>
 
@@ -52,7 +32,7 @@
   <mat-dialog-actions fxLayout="row wrap">
     <div fxFlex="100"
          fxLayoutAlign="end">
-      <button *ngIf="weapon"
+      <button *ngIf="expandable"
               mat-button
               color="warn"
               [mat-dialog-close]="-1">
@@ -61,8 +41,8 @@
       </button>
       <button mat-button
               color="primary"
-              [mat-dialog-close]="weaponForm.getRawValue()"
-              [disabled]="weaponForm.invalid">
+              [mat-dialog-close]="expandableForm.getRawValue()"
+              [disabled]="expandableForm.invalid">
         <mat-icon>save</mat-icon>
         Enregistrer
       </button>

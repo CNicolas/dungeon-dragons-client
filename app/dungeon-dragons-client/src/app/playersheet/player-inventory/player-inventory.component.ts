@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { Equipment, Weapon } from '@dungeon-dragons-model/inventory'
+import { Equipment, Expandable, Weapon } from '@dungeon-dragons-model/inventory'
 import { Player } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
@@ -22,5 +22,9 @@ export class PlayerInventoryComponent {
 
   updatePlayerEquipments(equipments: Equipment[]) {
     this.store.dispatch(new UpdatePlayer({ equipments }))
+  }
+
+  updatePlayerExpandables(expandables: Expandable[]) {
+    this.store.dispatch(new UpdatePlayer({ expandables }))
   }
 }

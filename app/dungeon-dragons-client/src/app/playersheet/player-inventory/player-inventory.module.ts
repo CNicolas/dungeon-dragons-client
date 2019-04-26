@@ -14,10 +14,9 @@ import {
   MatTableModule
 } from '@angular/material'
 import { PipesModule } from '../../shared/pipes/pipes.module'
-import { EquipmentEditionDialogComponent } from './player-inventory-equipments/equipment-edition-dialog/equipment-edition-dialog.component'
-import { PlayerInventoryEquipmentsComponent } from './player-inventory-equipments/player-inventory-equipments.component'
-import { PlayerInventoryWeaponsComponent } from './player-inventory-weapons/player-inventory-weapons.component'
-import { WeaponEditionDialogComponent } from './player-inventory-weapons/weapon-edition-dialog/weapon-edition-dialog.component'
+import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
+import { ExpandableEditionDialogComponent, PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
+import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from './player-inventory-weapons'
 import { PlayerInventoryComponent } from './player-inventory.component'
 
 @NgModule({
@@ -26,9 +25,11 @@ import { PlayerInventoryComponent } from './player-inventory.component'
     PlayerInventoryWeaponsComponent,
     WeaponEditionDialogComponent,
     PlayerInventoryEquipmentsComponent,
-    EquipmentEditionDialogComponent
+    EquipmentEditionDialogComponent,
+    PlayerInventoryExpandablesComponent,
+    ExpandableEditionDialogComponent
   ],
-  entryComponents: [WeaponEditionDialogComponent, EquipmentEditionDialogComponent],
+  entryComponents: [WeaponEditionDialogComponent, EquipmentEditionDialogComponent, ExpandableEditionDialogComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

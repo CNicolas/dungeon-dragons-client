@@ -1,0 +1,47 @@
+<div fxLayout="row wrap">
+  <table mat-table
+         [dataSource]="expandables"
+         fxFlex="100"
+         id="expandables-table">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell
+          *matHeaderCellDef>Nom
+      </th>
+      <td mat-cell
+          *matCellDef="let expandable">{{expandable.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="count">
+      <th mat-header-cell
+          *matHeaderCellDef>Nombre
+      </th>
+      <td mat-cell
+          *matCellDef="let expandable">{{expandable.count}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="special">
+      <th mat-header-cell
+          *matHeaderCellDef>Special
+      </th>
+      <td mat-cell
+          *matCellDef="let expandable">{{expandable.special}}</td>
+    </ng-container>
+
+    <tr mat-header-row
+        *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row
+        *matRowDef="let expandable; columns: displayedColumns; let i = index"
+        (click)="openExpandableEditionDialog(expandable, i)"></tr>
+  </table>
+
+  <div fxFlex="100"
+       fxLayoutAlign="end">
+    <button mat-raised-button
+            type="submit"
+            color="primary"
+            (click)="openExpandableCreationDialog()">
+      <mat-icon>add</mat-icon>
+      Créer un consommable
+    </button>
+  </div>
+</div>

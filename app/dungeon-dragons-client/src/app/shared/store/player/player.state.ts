@@ -37,8 +37,12 @@ export class PlayerState {
     return this.playerGateway.fetchPlayer(action.playerId)
       .pipe(
         tap((player: Player) => {
-          ctx.patchState({ player })
-          ctx.dispatch(new SetToolbarTitle(player.name))
+          if (!!player) {
+            ctx.patchState({ player })
+            ctx.dispatch(new SetToolbarTitle(player.name))
+          } else {
+            this.ngZone.run(() => this.router.navigate(['/']))
+          }
         })
       )
   }
