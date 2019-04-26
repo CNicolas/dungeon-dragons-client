@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { Equipment } from '@dungeon-dragons-model/inventory'
+import { filter } from 'rxjs/operators'
 import { EquipmentEditionDialogComponent } from './equipment-edition-dialog/equipment-edition-dialog.component'
 
 @Component({
@@ -25,11 +26,8 @@ export class PlayerInventoryEquipmentsComponent {
     })
 
     equipmentEditionDialog.afterClosed()
+      .pipe(filter((newEquipment: Equipment | -1) => !!newEquipment))
       .subscribe((newEquipment: Equipment | -1) => {
-        if (!!!newEquipment) {
-          return
-        }
-
         if (newEquipment === -1) {
           this.equipments.splice(equipmentIndex, 1)
         } else {
@@ -44,6 +42,7 @@ export class PlayerInventoryEquipmentsComponent {
     const equipmentEditionDialog = this.dialog.open(EquipmentEditionDialogComponent)
 
     equipmentEditionDialog.afterClosed()
+      .pipe(filter((newEquipment: Equipment) => !!newEquipment))
       .subscribe((newEquipment: Equipment) => {
         this.update.emit([...this.equipments, newEquipment])
       })
