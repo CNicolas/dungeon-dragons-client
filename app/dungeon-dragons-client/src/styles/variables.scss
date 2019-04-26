@@ -1,0 +1,76 @@
+$primary-color-dark: #455A64;
+$primary-color: #607D8B;
+$primary-color-light: #CFD8DC;
+$primary-color-text: #FFFFFF;
+$accent-color: #009688;
+$primary-text-color: #212121;
+$secondary-text-color: #757575;
+$divider-color: #BDBDBD;
+
+/* Primary */
+$dd-bluegrey: (
+  50 : #eceff1,
+  100 : #cfd8dc,
+  200 : #b0bec5,
+  300 : #90a4ae,
+  400 : #78919c,
+  500 : #607d8b,
+  600 : #587583,
+  700 : #4e6a78,
+  800 : #44606e,
+  900 : #334d5b,
+  A100 : #abe1ff,
+  A200 : #78ceff,
+  A400 : #45bcff,
+  A700 : #2bb3ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+/* Accent */
+$dd-teal: (
+  50 : #e0f2f1,
+  100 : #b3e0db,
+  200 : #80cbc4,
+  300 : #4db6ac,
+  400 : #26a69a,
+  500 : #009688,
+  600 : #008e80,
+  700 : #008375,
+  800 : #00796b,
+  900 : #006858,
+  A100 : #97ffec,
+  A200 : #64ffe3,
+  A400 : #31ffda,
+  A700 : #18ffd5,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);

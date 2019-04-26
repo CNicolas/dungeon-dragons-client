@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+@import 'variables';
+
+@include mat-core(); // ONLY ONCE IN WHOLE APP
+
+$dd-palette-primary: mat-palette($dd-bluegrey);
+$dd-palette-accent: mat-palette($dd-teal);
+$dd-theme: mat-light-theme($dd-palette-primary, $dd-palette-accent);
+
+@include angular-material-theme($dd-theme);
