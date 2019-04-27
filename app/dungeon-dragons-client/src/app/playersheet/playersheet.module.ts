@@ -7,6 +7,7 @@ import { PlayerCharacteristicsComponent } from './player-characteristics/player-
 import { PlayerInventoryModule } from './player-inventory/player-inventory.module'
 import { PlayerResolver } from './player.resolver'
 import { PlayersheetRoutingModule } from './playersheet-routing.module'
+import { PlayerActionsModule } from './player-actions/player-actions.module'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PlayersheetRoutingModule } from './playersheet-routing.module'
     FlexModule,
     MatInputModule,
     PlayersheetRoutingModule,
-    PlayerInventoryModule
+    PlayerInventoryModule,
+    PlayerActionsModule
   ],
   providers: [PlayerResolver]
 })
