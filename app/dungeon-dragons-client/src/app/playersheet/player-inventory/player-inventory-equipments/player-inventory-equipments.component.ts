@@ -7,7 +7,7 @@ import { EquipmentEditionDialogComponent } from './equipment-edition-dialog/equi
 @Component({
   selector: 'dd-player-inventory-equipments',
   templateUrl: './player-inventory-equipments.component.html',
-  styleUrls: ['../player-inventory.component.scss', './player-inventory-equipments.component.scss']
+  styleUrls: ['../../table.scss', './player-inventory-equipments.component.scss']
 })
 export class PlayerInventoryEquipmentsComponent {
   @Input() equipments: Equipment[] = []

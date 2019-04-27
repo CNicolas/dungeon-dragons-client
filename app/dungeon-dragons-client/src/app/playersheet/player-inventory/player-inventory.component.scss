@@ -1,25 +1,3 @@
-@import '~@angular/material/theming';
-
 .mat-expansion-panel {
   margin-bottom: 10px;
-}
-
-table {
-  width: 100%;
-  margin-bottom: 10px;
-
-  @media (max-device-width: 480px) {
-    .mat-column-special {
-      display: none;
-    }
-  }
-
-  .mat-row {
-    &:hover {
-      cursor: pointer;
-      @include mat-elevation(2);
-      @include mat-elevation-transition();
-      transform: scale(1);
-    }
-  }
 }

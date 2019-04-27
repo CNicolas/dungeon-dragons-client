@@ -7,7 +7,7 @@ import { WeaponEditionDialogComponent } from './weapon-edition-dialog/weapon-edi
 @Component({
   selector: 'dd-player-inventory-weapons',
   templateUrl: './player-inventory-weapons.component.html',
-  styleUrls: ['../player-inventory.component.scss', './player-inventory-weapons.component.scss']
+  styleUrls: ['../../table.scss', './player-inventory-weapons.component.scss']
 })
 export class PlayerInventoryWeaponsComponent {
   @Input() weapons: Weapon[] = []

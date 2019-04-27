@@ -7,7 +7,7 @@ import { ExpandableEditionDialogComponent } from './expandable-edition-dialog/ex
 @Component({
   selector: 'dd-player-inventory-expandables',
   templateUrl: './player-inventory-expandables.component.html',
-  styleUrls: ['../player-inventory.component.scss', './player-inventory-expandables.component.scss']
+  styleUrls: ['../../table.scss', './player-inventory-expandables.component.scss']
 })
 export class PlayerInventoryExpandablesComponent {
   @Input() expandables: Expandable[] = []
