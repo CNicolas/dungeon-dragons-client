@@ -7,7 +7,7 @@ import { OtherItemEditionDialogComponent } from './otherItem-edition-dialog/othe
 @Component({
   selector: 'dd-player-inventory-otheritems',
   templateUrl: './player-inventory-otherItems.component.html',
-  styleUrls: ['./player-inventory-otherItems.component.scss']
+  styleUrls: ['../player-inventory.component.scss', './player-inventory-otherItems.component.scss']
 })
 export class PlayerInventoryOtherItemsComponent {
   @Input() otherItems: OtherItem[] = []

@@ -7,7 +7,7 @@ import { EquipmentEditionDialogComponent } from './equipment-edition-dialog/equi
 @Component({
   selector: 'dd-player-inventory-equipments',
   templateUrl: './player-inventory-equipments.component.html',
-  styleUrls: ['./player-inventory-equipments.component.scss']
+  styleUrls: ['../player-inventory.component.scss', './player-inventory-equipments.component.scss']
 })
 export class PlayerInventoryEquipmentsComponent {
   @Input() equipments: Equipment[] = []
@@ -22,7 +22,7 @@ export class PlayerInventoryEquipmentsComponent {
   openEquipmentEditionDialog(equipment: Equipment, equipmentIndex: number) {
     const equipmentEditionDialog = this.dialog.open(EquipmentEditionDialogComponent, {
       autoFocus: false,
-      data: { equipment }
+      data: {equipment}
     })
 
     equipmentEditionDialog.afterClosed()

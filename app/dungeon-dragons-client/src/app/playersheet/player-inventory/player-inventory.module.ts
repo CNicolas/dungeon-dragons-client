@@ -20,24 +20,24 @@ import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from '.
 import { PlayerInventoryComponent } from './player-inventory.component'
 import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
 
+const components = [
+  PlayerInventoryComponent,
+  PlayerInventoryEquipmentsComponent,
+  PlayerInventoryExpandablesComponent,
+  PlayerInventoryOtherItemsComponent,
+  PlayerInventoryWeaponsComponent
+]
+
+const entryComponents = [
+  EquipmentEditionDialogComponent,
+  ExpandableEditionDialogComponent,
+  OtherItemEditionDialogComponent,
+  WeaponEditionDialogComponent
+]
+
 @NgModule({
-  declarations: [
-    PlayerInventoryComponent,
-    PlayerInventoryWeaponsComponent,
-    WeaponEditionDialogComponent,
-    PlayerInventoryEquipmentsComponent,
-    EquipmentEditionDialogComponent,
-    PlayerInventoryExpandablesComponent,
-    ExpandableEditionDialogComponent,
-    PlayerInventoryOtherItemsComponent,
-    OtherItemEditionDialogComponent
-  ],
-  entryComponents: [
-    WeaponEditionDialogComponent,
-    EquipmentEditionDialogComponent,
-    ExpandableEditionDialogComponent,
-    OtherItemEditionDialogComponent
-  ],
+  declarations: [...components, ...entryComponents],
+  entryComponents: [...entryComponents],
   imports: [
     CommonModule,
     ReactiveFormsModule,
