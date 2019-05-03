@@ -1,0 +1,8 @@
+<mat-form-field>
+  <input matInput
+         [formControl]="characteristicControl"
+         [placeholder]="placeholder"
+         type="number"
+         min="0">
+  <dd-characteristic-modifier [characteristicValue]="characteristicControl.value"></dd-characteristic-modifier>
+</mat-form-field>

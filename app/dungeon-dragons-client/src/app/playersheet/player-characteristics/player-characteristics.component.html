@@ -1,9 +1,11 @@
 <form [formGroup]="playerForm"
-      fxLayout="row">
+      fxLayout="row wrap">
   <mat-form-field fxFlex="60"
                   fxFlex.xs="100">
     <input matInput
            placeholder="Nom du personnage"
            formControlName="name">
   </mat-form-field>
+
+  <dd-characteristics-form [characteristicsForm]="characteristicsForm"></dd-characteristics-form>
 </form>

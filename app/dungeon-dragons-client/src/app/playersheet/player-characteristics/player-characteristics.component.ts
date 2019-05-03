@@ -17,16 +17,27 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
   @Select(PlayerState.player) player$: Observable<Player>
 
-  public player: Player
-  public playerForm: FormGroup
+  player: Player
+  readonly playerForm: FormGroup
+  readonly characteristicsForm: FormGroup
 
   constructor(private readonly store: Store,
               formBuilder: FormBuilder) {
     super()
 
     this.playerForm = formBuilder.group({
-      name: ['', Validators.required]
+      name: ['', Validators.required],
+      characteristics: formBuilder.group({
+        strength: [null, Validators.required],
+        dexterity: [null, Validators.required],
+        constitution: [null, Validators.required],
+        intelligence: [null, Validators.required],
+        wisdom: [null, Validators.required],
+        charisma: [null, Validators.required]
+      })
     })
+
+    this.characteristicsForm = this.playerForm.get('characteristics') as FormGroup
 
     this.willUnsubscribe(this.player$.subscribe(this.loadPlayer))
   }
@@ -48,6 +59,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
     this.player = player
 
     this.playerForm.get('name').setValue(player.name)
+    this.playerForm.get('characteristics').setValue(player.characteristics)
   }
 
   private savePlayer(): void {
@@ -61,7 +73,8 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
     return {
       ...this.player,
-      name: formValue.name
+      name: formValue.name,
+      characteristics: formValue.characteristics
     }
   }
 }

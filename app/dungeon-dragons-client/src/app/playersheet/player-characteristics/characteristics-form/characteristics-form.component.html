@@ -1,0 +1,24 @@
+<form [formGroup]="characteristicsForm"
+      fxLayout="row wrap">
+
+  <div fxFlex="50"
+       fxLayout="row wrap">
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('strength')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('dexterity')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('constitution')"
+                               fxFlex="100"></dd-characteristic-control>
+  </div>
+
+  <div fxFlex="50"
+       fxLayout="row wrap">
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('intelligence')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('wisdom')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="characteristicsForm.get('charisma')"
+                               fxFlex="100"></dd-characteristic-control>
+  </div>
+
+</form>
