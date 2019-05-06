@@ -82,7 +82,7 @@
             "main": "app/dungeon-dragons-client/src/test.ts",
             "polyfills": "app/dungeon-dragons-client/src/polyfills.ts",
             "tsConfig": "app/dungeon-dragons-client/tsconfig.spec.json",
-            "karmaConfig": "app/dungeon-dragons-client/src/karma.conf.js",
+            "karmaConfig": "app/dungeon-dragons-client/karma.conf.js",
             "styles": [
               "app/dungeon-dragons-client/src/styles/styles.scss"
             ],
