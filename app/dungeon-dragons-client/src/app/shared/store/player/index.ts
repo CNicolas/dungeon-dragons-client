@@ -1,3 +1,5 @@
 export { PlayerState }from './player.state'
 export * from './player.actions'
 export { PlayerStoreModule } from './player-store.module'
+export { PlayerStoreTestingModule } from './player-store.module.spec'
+export { TESTING_PLAYER } from './player.consts'

@@ -9,16 +9,15 @@ import {
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatMenuModule,
   MatSelectModule,
   MatTableModule
 } from '@angular/material'
 import { PipesModule } from '../../shared/pipes/pipes.module'
 import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
 import { ExpandableEditionDialogComponent, PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
+import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
 import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from './player-inventory-weapons'
 import { PlayerInventoryComponent } from './player-inventory.component'
-import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
 
 const components = [
   PlayerInventoryComponent,
@@ -50,8 +49,7 @@ const entryComponents = [
     MatInputModule,
     MatSelectModule,
     MatTableModule,
-    PipesModule,
-    MatMenuModule
+    PipesModule
   ]
 })
 export class PlayerInventoryModule {

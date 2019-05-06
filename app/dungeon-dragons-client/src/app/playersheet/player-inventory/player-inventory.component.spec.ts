@@ -1,5 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { ReactiveFormsModule } from '@angular/forms'
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatSelectModule,
+  MatTableModule
+} from '@angular/material'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxsModule } from '@ngxs/store'
+import { PipesModule } from '../../shared/pipes/pipes.module'
+import { PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
+import { PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
+import { PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
+import { PlayerInventoryWeaponsComponent } from './player-inventory-weapons'
 import { PlayerInventoryComponent } from './player-inventory.component'
 
 describe('PlayerInventoryComponent', () => {
@@ -8,7 +25,27 @@ describe('PlayerInventoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PlayerInventoryComponent]
+      declarations: [
+        PlayerInventoryEquipmentsComponent,
+        PlayerInventoryExpandablesComponent,
+        PlayerInventoryOtherItemsComponent,
+        PlayerInventoryWeaponsComponent,
+        PlayerInventoryComponent
+      ],
+      imports: [
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatSelectModule,
+        MatTableModule,
+        NgxsModule.forRoot([], { developmentMode: true }),
+        PipesModule
+      ]
     })
       .compileComponents()
   }))

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { MatDialogModule, MatIconModule, MatTableModule } from '@angular/material'
 import { PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems.component'
 
 describe('PlayerInventoryOtherItemsComponent', () => {
@@ -7,7 +8,12 @@ describe('PlayerInventoryOtherItemsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PlayerInventoryOtherItemsComponent]
+      declarations: [PlayerInventoryOtherItemsComponent],
+      imports: [
+        MatDialogModule,
+        MatIconModule,
+        MatTableModule
+      ]
     })
       .compileComponents()
   }))

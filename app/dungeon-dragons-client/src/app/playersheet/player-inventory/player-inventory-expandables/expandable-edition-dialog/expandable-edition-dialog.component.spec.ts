@@ -1,6 +1,18 @@
+import { NgModule } from '@angular/core'
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-
+import { ReactiveFormsModule } from '@angular/forms'
+import { MAT_DIALOG_DATA, MatButtonModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule } from '@angular/material'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { ExpandableEditionDialogComponent } from './expandable-edition-dialog.component'
+
+@NgModule({
+  entryComponents: [ExpandableEditionDialogComponent],
+  providers: [
+    { provide: MAT_DIALOG_DATA, useValue: {} }
+  ]
+})
+export class ExpandableEditionDialogTestingModule {
+}
 
 describe('ExpandableEditionDialogComponent', () => {
   let component: ExpandableEditionDialogComponent
@@ -8,7 +20,17 @@ describe('ExpandableEditionDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ExpandableEditionDialogComponent]
+      declarations: [ExpandableEditionDialogComponent],
+      imports: [
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        ExpandableEditionDialogTestingModule
+      ]
     })
       .compileComponents()
   }))
