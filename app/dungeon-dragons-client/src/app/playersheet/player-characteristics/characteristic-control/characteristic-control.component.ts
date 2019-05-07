@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core'
-import { AbstractControl } from '@angular/forms'
+import { FormControl } from '@angular/forms'
 
 @Component({
   selector: 'dd-characteristic-control',
@@ -8,5 +8,5 @@ import { AbstractControl } from '@angular/forms'
 })
 export class CharacteristicControlComponent {
   @Input() placeholder: string
-  @Input() characteristicControl: AbstractControl
+  @Input() characteristicControl: FormControl
 }
