@@ -27,14 +27,12 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
     this.playerForm = formBuilder.group({
       name: ['', Validators.required],
-      characteristics: formBuilder.group({
-        strength: [null, Validators.required],
-        dexterity: [null, Validators.required],
-        constitution: [null, Validators.required],
-        intelligence: [null, Validators.required],
-        wisdom: [null, Validators.required],
-        charisma: [null, Validators.required]
-      })
+      strength: [10, Validators.required],
+      dexterity: [10, Validators.required],
+      constitution: [10, Validators.required],
+      intelligence: [10, Validators.required],
+      wisdom: [10, Validators.required],
+      charisma: [10, Validators.required]
     })
 
     this.characteristicsForm = this.playerForm.get('characteristics') as FormGroup
@@ -58,8 +56,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
   loadPlayer = (player: Player): void => {
     this.player = player
 
-    this.playerForm.get('name').setValue(player.name)
-    this.playerForm.get('characteristics').setValue(player.characteristics)
+    this.playerForm.patchValue(player)
   }
 
   private savePlayer(): void {
@@ -73,8 +70,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
     return {
       ...this.player,
-      name: formValue.name,
-      characteristics: formValue.characteristics
+      ...formValue
     }
   }
 }

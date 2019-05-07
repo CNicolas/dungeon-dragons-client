@@ -7,5 +7,23 @@
            formControlName="name">
   </mat-form-field>
 
-  <dd-characteristics-form [characteristicsForm]="characteristicsForm"></dd-characteristics-form>
+  <div fxFlex="50"
+       fxLayout="row wrap">
+    <dd-characteristic-control [characteristicControl]="playerForm.get('strength')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="playerForm.get('dexterity')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="playerForm.get('constitution')"
+                               fxFlex="100"></dd-characteristic-control>
+  </div>
+
+  <div fxFlex="50"
+       fxLayout="row wrap">
+    <dd-characteristic-control [characteristicControl]="playerForm.get('intelligence')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="playerForm.get('wisdom')"
+                               fxFlex="100"></dd-characteristic-control>
+    <dd-characteristic-control [characteristicControl]="playerForm.get('charisma')"
+                               fxFlex="100"></dd-characteristic-control>
+  </div>
 </form>
