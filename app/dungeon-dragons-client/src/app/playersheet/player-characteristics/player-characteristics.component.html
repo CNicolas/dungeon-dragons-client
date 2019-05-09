@@ -1,35 +1,53 @@
-<form [formGroup]="playerForm"
-      fxLayout="row wrap">
-  <mat-form-field fxFlex="60"
-                  fxFlex.xs="100">
-    <input matInput
-           placeholder="Nom du personnage"
-           formControlName="name">
-  </mat-form-field>
+<form [formGroup]="playerForm">
 
-  <div fxFlex="50"
-       fxLayout="row wrap">
-    <dd-characteristic-control [characteristicControl]="playerForm.get('strength')"
-                               placeholder="Force"
-                               fxFlex="100"></dd-characteristic-control>
-    <dd-characteristic-control [characteristicControl]="playerForm.get('dexterity')"
-                               placeholder="Dextérité"
-                               fxFlex="100"></dd-characteristic-control>
-    <dd-characteristic-control [characteristicControl]="playerForm.get('constitution')"
-                               placeholder="Constitution"
-                               fxFlex="100"></dd-characteristic-control>
+  <div fxLayout="row wrap">
+    <mat-form-field fxFlex="50"
+                    fxFlex.xs="80">
+      <input matInput
+             placeholder="Nom du personnage"
+             formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="20"
+                    fxFlex.xs="20">
+      <input matInput
+             placeholder="Niveau"
+             formControlName="level"
+             type="number"
+             min="1">
+    </mat-form-field>
   </div>
 
-  <div fxFlex="50"
-       fxLayout="row wrap">
-    <dd-characteristic-control [characteristicControl]="playerForm.get('intelligence')"
-                               placeholder="Intelligence"
-                               fxFlex="100"></dd-characteristic-control>
-    <dd-characteristic-control [characteristicControl]="playerForm.get('wisdom')"
-                               placeholder="Sagesse"
-                               fxFlex="100"></dd-characteristic-control>
-    <dd-characteristic-control [characteristicControl]="playerForm.get('charisma')"
-                               placeholder="Charisme"
-                               fxFlex="100"></dd-characteristic-control>
+  <div fxLayout="row wrap">
+    <div fxFlex="30"
+         fxFlex.xs="48"
+         fxLayout="row wrap">
+      <dd-characteristic-control [characteristicControl]="playerForm.get('strength')"
+                                 placeholder="Force"
+                                 fxFlex="100"></dd-characteristic-control>
+      <dd-characteristic-control [characteristicControl]="playerForm.get('dexterity')"
+                                 placeholder="Dextérité"
+                                 fxFlex="100"></dd-characteristic-control>
+      <dd-characteristic-control [characteristicControl]="playerForm.get('constitution')"
+                                 placeholder="Constitution"
+                                 fxFlex="100"></dd-characteristic-control>
+    </div>
+
+    <div fxFlex.xs="4"></div>
+
+    <div fxFlex="30"
+         fxFlex.xs="48"
+         fxLayout="row wrap">
+      <dd-characteristic-control [characteristicControl]="playerForm.get('intelligence')"
+                                 placeholder="Intelligence"
+                                 fxFlex="100"></dd-characteristic-control>
+      <dd-characteristic-control [characteristicControl]="playerForm.get('wisdom')"
+                                 placeholder="Sagesse"
+                                 fxFlex="100"></dd-characteristic-control>
+      <dd-characteristic-control [characteristicControl]="playerForm.get('charisma')"
+                                 placeholder="Charisme"
+                                 fxFlex="100"></dd-characteristic-control>
+    </div>
   </div>
+
 </form>

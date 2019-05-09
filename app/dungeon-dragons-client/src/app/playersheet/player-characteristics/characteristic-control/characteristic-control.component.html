@@ -1,10 +1,14 @@
-<mat-form-field>
+<mat-form-field fxFlex="90">
   <input matInput
          [formControl]="characteristicControl"
          [placeholder]="placeholder"
          type="number"
          min="0">
-  <div matBadge="{{ modifier }}"
-       matBadgeOverlap="false"
-       matSuffix></div>
 </mat-form-field>
+
+<div matBadge="{{ modifier }}"
+     matBadgeOverlap="false"
+     [class.positive]="modifier > 0"
+     [class.negative]="modifier < 0"
+     class="characteristic-modifier"></div>
+

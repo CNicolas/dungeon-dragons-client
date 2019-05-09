@@ -1,13 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { ReactiveFormsModule } from '@angular/forms'
-import { MatFormFieldModule, MatInputModule } from '@angular/material'
+import { MatBadgeModule, MatFormFieldModule, MatInputModule } from '@angular/material'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxsModule, Store } from '@ngxs/store'
 import { of } from 'rxjs'
+import { HelpersModule } from '../../shared/helpers/helpers.module'
 import { TESTING_PLAYER } from '../../shared/store/player'
 import { CharacteristicControlComponent } from './characteristic-control/characteristic-control.component'
-import { CharacteristicModifierComponent } from './characteristic-control/characteristic-modifier/characteristic-modifier.component'
-import { CharacteristicsFormComponent } from './characteristics-form/characteristics-form.component'
 import { PlayerCharacteristicsComponent } from './player-characteristics.component'
 
 describe('PlayerCharacteristicsComponent', () => {
@@ -18,17 +17,17 @@ describe('PlayerCharacteristicsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        CharacteristicModifierComponent,
         CharacteristicControlComponent,
-        CharacteristicsFormComponent,
         PlayerCharacteristicsComponent
       ],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
+        MatBadgeModule,
         MatFormFieldModule,
         MatInputModule,
-        NgxsModule.forRoot([], { developmentMode: true })
+        NgxsModule.forRoot([], { developmentMode: true }),
+        HelpersModule
       ]
     })
       .compileComponents()

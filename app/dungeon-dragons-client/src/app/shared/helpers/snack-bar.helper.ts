@@ -16,7 +16,7 @@ export class SnackBarHelper {
 
   success(text: string,
           duration: number = SnackBarHelper.standardDuration,
-          actionText: string = 'FERMER',
+          actionText?: string,
           userDismissAction: () => void = null): MatSnackBarRef<SimpleSnackBar> {
 
     const successSnackBar: MatSnackBarRef<SimpleSnackBar> = this.snackBar.open(text, actionText, {

@@ -1,0 +1,9 @@
+//noinspection CssUnknownTarget
+@import '~app/dungeon-dragons-client/src/styles/variables';
+
+.characteristic {
+  &-modifier {
+    right: 15px;
+    top: 25px;
+  }
+}

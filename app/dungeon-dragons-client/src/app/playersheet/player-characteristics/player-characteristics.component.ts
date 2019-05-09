@@ -6,6 +6,7 @@ import * as deepEqual from 'fast-deep-equal'
 import { Observable } from 'rxjs'
 import { debounceTime } from 'rxjs/operators'
 import { AbstractSubscriptionsDestroyer } from '../../core'
+import { SnackBarHelper } from '../../shared/helpers/snack-bar.helper'
 import { PlayerState, UpdatePlayer } from '../../shared/store/player'
 
 @Component({
@@ -22,11 +23,13 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
   readonly characteristicsForm: FormGroup
 
   constructor(private readonly store: Store,
+              private readonly snackBarHelper: SnackBarHelper,
               formBuilder: FormBuilder) {
     super()
 
     this.playerForm = formBuilder.group({
       name: ['', Validators.required],
+      level: [null, Validators.required],
       strength: [null, Validators.required],
       dexterity: [null, Validators.required],
       constitution: [null, Validators.required],
@@ -61,7 +64,10 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
   private savePlayer(): void {
     if (!deepEqual(this.extractPlayerFromForm(), this.player)) {
-      this.store.dispatch(new UpdatePlayer(this.extractPlayerFromForm()))
+      this.willUnsubscribe(
+        this.store.dispatch(new UpdatePlayer(this.extractPlayerFromForm()))
+          .subscribe(() => this.snackBarHelper.success('Sauvegarde effectuée'))
+      )
     }
   }
 
