@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { MatDialogModule, MatIconModule, MatTableModule } from '@angular/material'
+import { PipesModule } from '../../../shared/pipes/pipes.module'
 import { PlayerInventoryWeaponsComponent } from './player-inventory-weapons.component'
 
 describe('PlayerInventoryWeaponsComponent', () => {
@@ -12,7 +13,8 @@ describe('PlayerInventoryWeaponsComponent', () => {
       imports: [
         MatDialogModule,
         MatIconModule,
-        MatTableModule
+        MatTableModule,
+        PipesModule
       ]
     })
       .compileComponents()

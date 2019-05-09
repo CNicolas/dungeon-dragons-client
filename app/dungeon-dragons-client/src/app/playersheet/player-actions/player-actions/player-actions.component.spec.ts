@@ -1,5 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatButtonModule, MatDialogModule, MatIconModule, MatTableModule } from '@angular/material'
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatIconModule,
+  MatTableModule,
+  MatTooltipModule
+} from '@angular/material'
 import { Store } from '@ngxs/store'
 import { of } from 'rxjs'
 import { PlayerStoreTestingModule, TESTING_PLAYER } from '../../../shared/store/player'
@@ -14,10 +22,13 @@ describe('PlayerActionsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PlayerActionsComponent],
       imports: [
+        MatBadgeModule,
         MatButtonModule,
         MatDialogModule,
+        MatGridListModule,
         MatIconModule,
         MatTableModule,
+        MatTooltipModule,
         PlayerStoreTestingModule
       ]
     })
