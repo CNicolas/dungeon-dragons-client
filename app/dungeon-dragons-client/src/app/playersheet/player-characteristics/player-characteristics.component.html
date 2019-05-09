@@ -1,20 +1,30 @@
 <form [formGroup]="playerForm">
 
   <div fxLayout="row wrap">
-    <mat-form-field fxFlex="50"
-                    fxFlex.xs="80">
+    <mat-form-field fxFlex="30"
+                    fxFlex.xs="75">
       <input matInput
              placeholder="Nom du personnage"
              formControlName="name">
     </mat-form-field>
 
-    <mat-form-field fxFlex="20"
-                    fxFlex.xs="20">
+    <mat-form-field fxFlex="10"
+                    fxFlex.xs="25">
       <input matInput
              placeholder="Niveau"
              formControlName="level"
              type="number"
              min="1">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="20"
+                    fxFlex.xs="100">
+      <mat-select formControlName="race"
+                  placeholder="Race"
+                  required>
+        <mat-option *ngFor="let race of races | keyvalue | sort:'value'"
+                    [value]="race.key">{{ race.value }}</mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
 

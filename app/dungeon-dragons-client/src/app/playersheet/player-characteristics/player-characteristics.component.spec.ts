@@ -1,10 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { ReactiveFormsModule } from '@angular/forms'
-import { MatBadgeModule, MatFormFieldModule, MatInputModule } from '@angular/material'
+import { MatBadgeModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { NgxsModule, Store } from '@ngxs/store'
 import { of } from 'rxjs'
 import { HelpersModule } from '../../shared/helpers/helpers.module'
+import { PipesModule } from '../../shared/pipes/pipes.module'
 import { TESTING_PLAYER } from '../../shared/store/player'
 import { CharacteristicControlComponent } from './characteristic-control/characteristic-control.component'
 import { PlayerCharacteristicsComponent } from './player-characteristics.component'
@@ -26,8 +27,10 @@ describe('PlayerCharacteristicsComponent', () => {
         MatBadgeModule,
         MatFormFieldModule,
         MatInputModule,
+        MatSelectModule,
         NgxsModule.forRoot([], { developmentMode: true }),
-        HelpersModule
+        HelpersModule,
+        PipesModule
       ]
     })
       .compileComponents()

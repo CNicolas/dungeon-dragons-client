@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { Player } from '@dungeon-dragons-model/player'
+import { Player, Race } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import * as deepEqual from 'fast-deep-equal'
 import { Observable } from 'rxjs'
@@ -22,6 +22,8 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
   readonly playerForm: FormGroup
   readonly characteristicsForm: FormGroup
 
+  readonly races: typeof Race = Race
+
   constructor(private readonly store: Store,
               private readonly snackBarHelper: SnackBarHelper,
               formBuilder: FormBuilder) {
@@ -30,6 +32,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
     this.playerForm = formBuilder.group({
       name: ['', Validators.required],
       level: [null, Validators.required],
+      race: [null, Validators.required],
       strength: [null, Validators.required],
       dexterity: [null, Validators.required],
       constitution: [null, Validators.required],
