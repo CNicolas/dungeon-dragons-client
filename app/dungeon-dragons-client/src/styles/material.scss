@@ -57,4 +57,19 @@
   }
 }
 
+.action_level {
+  .mat-badge-content {
+    background-color: transparent;
+    color: $primary-color;
+  }
+}
+
+.action_cooldown {
+  .mat-badge-content {
+    background-color: $primary-color;
+    line-height: 24px;
+    font-size: 17px;
+  }
+}
+
 // endregion

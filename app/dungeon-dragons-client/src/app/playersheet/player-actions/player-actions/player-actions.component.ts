@@ -1,30 +1,34 @@
+import { BreakpointObserver } from '@angular/cdk/layout'
 import { Component } from '@angular/core'
-import { PlayerState, UpdatePlayer } from '../../../shared/store/player'
+import { MatDialog } from '@angular/material'
+import { Action } from '@dungeon-dragons-model/actions'
+import { Player } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
-import { Player } from '@dungeon-dragons-model/player'
-import { AbstractSubscriptionsDestroyer } from '../../../core'
 import { filter } from 'rxjs/operators'
-import { Action } from '@dungeon-dragons-model/actions'
-import { MatDialog } from '@angular/material'
+import { AbstractHandsetObserver } from '../../../core'
+import { PlayerState, UpdatePlayer } from '../../../shared/store/player'
 import { ActionEditionDialogComponent } from './action-edition-dialog/action-edition-dialog.component'
 
 @Component({
   selector: 'dd-player-actions',
   templateUrl: './player-actions.component.html',
-  styleUrls: ['../../table.scss', './player-actions.component.scss']
+  styleUrls: ['./player-actions.component.scss']
 })
-export class PlayerActionsComponent extends AbstractSubscriptionsDestroyer {
+export class PlayerActionsComponent extends AbstractHandsetObserver {
 
   @Select(PlayerState.player) player$: Observable<Player>
 
   actions: Action[] = []
 
-  readonly displayedColumns: string[] = ['name', 'type', 'level', 'cooldown', 'effect']
+  get cols(): number {
+    return this.isHandset ? 1 : 5
+  }
 
   constructor(private readonly store: Store,
-              private readonly dialog: MatDialog) {
-    super()
+              private readonly dialog: MatDialog,
+              breakpointObserver: BreakpointObserver) {
+    super(breakpointObserver)
 
     this.willUnsubscribe(
       this.player$.subscribe(player => this.actions = player.actions)
@@ -34,7 +38,7 @@ export class PlayerActionsComponent extends AbstractSubscriptionsDestroyer {
   openActionEditionDialog(action: Action, actionIndex: number) {
     const actionEditionDialog = this.dialog.open(ActionEditionDialogComponent, {
       autoFocus: false,
-      data: {action}
+      data: { action }
     })
 
     actionEditionDialog.afterClosed()
@@ -46,7 +50,7 @@ export class PlayerActionsComponent extends AbstractSubscriptionsDestroyer {
           this.actions[actionIndex] = newAction
         }
 
-        this.store.dispatch(new UpdatePlayer({actions: [...this.actions]}))
+        this.store.dispatch(new UpdatePlayer({ actions: [...this.actions] }))
       })
   }
 
@@ -56,7 +60,7 @@ export class PlayerActionsComponent extends AbstractSubscriptionsDestroyer {
     actionEditionDialog.afterClosed()
       .pipe(filter((newAction: Action) => !!newAction))
       .subscribe((newAction: Action) => {
-        this.store.dispatch(new UpdatePlayer({actions: [...this.actions, newAction]}))
+        this.store.dispatch(new UpdatePlayer({ actions: [...this.actions, newAction] }))
       })
   }
 }

@@ -1,10 +1,21 @@
-import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { PlayerActionsComponent } from './player-actions/player-actions.component'
-import { MatButtonModule, MatDialogModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTableModule } from '@angular/material'
+import { NgModule } from '@angular/core'
 import { FlexModule } from '@angular/flex-layout'
-import { ActionEditionDialogComponent } from './player-actions/action-edition-dialog/action-edition-dialog.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import {
+  MatBadgeModule,
+  MatButtonModule,
+  MatCardModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatTableModule,
+  MatTooltipModule
+} from '@angular/material'
+import { ActionEditionDialogComponent } from './player-actions/action-edition-dialog/action-edition-dialog.component'
+import { PlayerActionsComponent } from './player-actions/player-actions.component'
 
 @NgModule({
   declarations: [PlayerActionsComponent, ActionEditionDialogComponent],
@@ -14,11 +25,15 @@ import { ReactiveFormsModule } from '@angular/forms'
     ReactiveFormsModule,
     FlexModule,
     MatButtonModule,
+    MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule,
+    MatGridListModule,
+    MatBadgeModule
   ]
 })
 export class PlayerActionsModule {

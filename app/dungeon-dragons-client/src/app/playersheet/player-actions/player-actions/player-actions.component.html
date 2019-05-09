@@ -1,55 +1,44 @@
+<mat-grid-list [cols]="cols"
+               rowHeight="2:1"
+               gutterSize="10px"
+               class="actions">
+  <mat-grid-tile *ngFor="let action of actions; let i = index"
+                 class="action">
+    <mat-grid-tile-header fxLayout="row">
+      <div fxFlex
+           fxLayout="row wrap">
+        <div fxFlex="100"
+             class="action_name">{{action.name}}</div>
+        <div fxFlex="100"
+             class="action_type">{{action.type}}</div>
+      </div>
+
+      <button mat-icon-button
+              (click)="openActionEditionDialog(action, i)"
+              class="action_menu">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-grid-tile-header>
+
+    <div fxLayout="row wrap">
+
+      <div fxFlex="100"
+           class="action_effect">{{action.effect}}</div>
+    </div>
+
+    <mat-grid-tile-footer fxLayout="row">
+      <div matBadge="{{ action.level }}"
+           matTooltip="Niveau"
+           class="action_level"></div>
+      <div fxFlex></div>
+      <div matBadge="{{ action.cooldown }}"
+           matTooltip="Délai"
+           class="action_cooldown"></div>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+</mat-grid-list>
+
 <div fxLayout="row wrap">
-  <table mat-table
-         [dataSource]="actions"
-         fxFlex="100"
-         id="actions-table">
-    <ng-container matColumnDef="name">
-      <th mat-header-cell
-          *matHeaderCellDef>Nom
-      </th>
-      <td mat-cell
-          *matCellDef="let action">{{action.name}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="type">
-      <th mat-header-cell
-          *matHeaderCellDef>Type
-      </th>
-      <td mat-cell
-          *matCellDef="let action">{{action.type}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="level">
-      <th mat-header-cell
-          *matHeaderCellDef>Level
-      </th>
-      <td mat-cell
-          *matCellDef="let action">{{action.level}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="cooldown">
-      <th mat-header-cell
-          *matHeaderCellDef>Délai
-      </th>
-      <td mat-cell
-          *matCellDef="let action">{{action.cooldown}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="effect">
-      <th mat-header-cell
-          *matHeaderCellDef>Effet
-      </th>
-      <td mat-cell
-          *matCellDef="let action">{{action.effect}}</td>
-    </ng-container>
-
-    <tr mat-header-row
-        *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row
-        *matRowDef="let action; columns: displayedColumns; let i = index"
-        (click)="openActionEditionDialog(action, i)"></tr>
-  </table>
-
   <div fxFlex="100"
        fxLayoutAlign="end">
     <button mat-raised-button
