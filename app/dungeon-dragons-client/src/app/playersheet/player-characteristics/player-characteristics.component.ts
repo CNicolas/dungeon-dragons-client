@@ -27,12 +27,12 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
     this.playerForm = formBuilder.group({
       name: ['', Validators.required],
-      strength: [10, Validators.required],
-      dexterity: [10, Validators.required],
-      constitution: [10, Validators.required],
-      intelligence: [10, Validators.required],
-      wisdom: [10, Validators.required],
-      charisma: [10, Validators.required]
+      strength: [null, Validators.required],
+      dexterity: [null, Validators.required],
+      constitution: [null, Validators.required],
+      intelligence: [null, Validators.required],
+      wisdom: [null, Validators.required],
+      charisma: [null, Validators.required]
     })
 
     this.characteristicsForm = this.playerForm.get('characteristics') as FormGroup
@@ -42,7 +42,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
   ngOnInit(): void {
     this.willUnsubscribe(
-      this.playerForm.valueChanges.pipe(debounceTime(2000))
+      this.playerForm.valueChanges.pipe(debounceTime(1000))
         .subscribe(() => this.savePlayer())
     )
   }

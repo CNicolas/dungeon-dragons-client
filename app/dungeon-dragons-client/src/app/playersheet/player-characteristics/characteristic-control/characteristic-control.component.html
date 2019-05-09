@@ -4,6 +4,7 @@
          [placeholder]="placeholder"
          type="number"
          min="0">
-  <dd-characteristic-modifier [characteristicValue]="characteristicControl.value"
-                              matSuffix></dd-characteristic-modifier>
+  <div matBadge="{{ modifier }}"
+       matBadgeOverlap="false"
+       matSuffix></div>
 </mat-form-field>
