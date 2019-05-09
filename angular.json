@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app/dungeon-dragons-client",
+            "outputPath": "dist/dungeon-dragons-client",
             "index": "app/dungeon-dragons-client/src/index.html",
             "main": "app/dungeon-dragons-client/src/main.ts",
             "polyfills": "app/dungeon-dragons-client/src/polyfills.ts",
