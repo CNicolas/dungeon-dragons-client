@@ -5,16 +5,27 @@ export interface Player {
   name: string
   race: string
   level: number
-  strength: number
-  dexterity: number
-  constitution: number
-  intelligence: number
-  wisdom: number
-  charisma: number
+  characteristics: PlayerCharacteristics
   weapons: Weapon[]
   equipments: Equipment[]
   expandables: Expandable[]
   otherItems: OtherItem[]
   actions: Action[],
-  id: number
+  id?: number
+}
+
+export interface PlayerCharacteristics {
+  strength: PlayerCharacteristic
+  dexterity: PlayerCharacteristic
+  constitution: PlayerCharacteristic
+  intelligence: PlayerCharacteristic
+  wisdom: PlayerCharacteristic
+  charisma: PlayerCharacteristic,
+  id?: number
+}
+
+export interface PlayerCharacteristic {
+  characteristic: string
+  value: number
+  savingThrow: boolean
 }

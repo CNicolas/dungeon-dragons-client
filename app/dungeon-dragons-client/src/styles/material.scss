@@ -45,13 +45,13 @@
 
 // region BADGE
 
-.characteristic-modifier.positive {
+.characteristic_modifier.positive {
   .mat-badge-content {
     background-color: $dd-success;
   }
 }
 
-.characteristic-modifier.negative {
+.characteristic_modifier.negative {
   .mat-badge-content {
     background-color: $dd-error;
   }

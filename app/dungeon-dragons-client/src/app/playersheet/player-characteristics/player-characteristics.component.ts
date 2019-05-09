@@ -33,17 +33,21 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
       name: ['', Validators.required],
       level: [null, Validators.required],
       race: [null, Validators.required],
-      strength: [null, Validators.required],
-      dexterity: [null, Validators.required],
-      constitution: [null, Validators.required],
-      intelligence: [null, Validators.required],
-      wisdom: [null, Validators.required],
-      charisma: [null, Validators.required]
+      characteristics: formBuilder.group({
+        strength: [null, Validators.required],
+        dexterity: [null, Validators.required],
+        constitution: [null, Validators.required],
+        intelligence: [null, Validators.required],
+        wisdom: [null, Validators.required],
+        charisma: [null, Validators.required]
+      })
     })
 
     this.characteristicsForm = this.playerForm.get('characteristics') as FormGroup
 
-    this.willUnsubscribe(this.player$.subscribe(this.loadPlayer))
+    this.willUnsubscribe(
+      this.player$.subscribe(this.loadPlayer)
+    )
   }
 
   ngOnInit(): void {
@@ -75,7 +79,15 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
   }
 
   private extractPlayerFromForm(): Player {
-    const formValue = this.playerForm.getRawValue()
+    const formRawValue = this.playerForm.getRawValue()
+
+    const formValue: Partial<Player> = {
+      ...formRawValue,
+      characteristics: {
+        ...formRawValue.characteristics,
+        id: this.player.characteristics.id
+      }
+    }
 
     return {
       ...this.player,

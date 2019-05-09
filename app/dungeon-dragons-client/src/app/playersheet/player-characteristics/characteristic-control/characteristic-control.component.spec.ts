@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { FormControl, ReactiveFormsModule } from '@angular/forms'
-import { MatBadgeModule, MatInputModule } from '@angular/material'
+import { MatBadgeModule, MatCheckboxModule, MatInputModule, MatTooltipModule } from '@angular/material'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { CharacteristicControlComponent } from './characteristic-control.component'
 
@@ -15,7 +15,9 @@ describe('CharacteristicControlComponent', () => {
         NoopAnimationsModule,
         ReactiveFormsModule,
         MatBadgeModule,
-        MatInputModule
+        MatCheckboxModule,
+        MatInputModule,
+        MatTooltipModule
       ]
     })
       .compileComponents()
@@ -24,7 +26,7 @@ describe('CharacteristicControlComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CharacteristicControlComponent)
     component = fixture.componentInstance
-    component.characteristicControl = new FormControl()
+    component.characteristicControl = new FormControl({})
     fixture.detectChanges()
   })
 

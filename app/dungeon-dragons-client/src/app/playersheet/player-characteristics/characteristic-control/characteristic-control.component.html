@@ -1,14 +1,20 @@
-<mat-form-field fxFlex="90">
+<mat-checkbox [formControl]="characteristicForm.get('savingThrow')"
+              matTooltip="Jet de Sauvegarde"
+              class="characteristic_saving-throw">
+</mat-checkbox>
+
+<mat-form-field fxFlex="75">
   <input matInput
-         [formControl]="characteristicControl"
+         [formControl]="characteristicForm.get('value')"
          [placeholder]="placeholder"
          type="number"
-         min="0">
+         min="0"
+         required>
 </mat-form-field>
 
 <div matBadge="{{ modifier }}"
      matBadgeOverlap="false"
      [class.positive]="modifier > 0"
      [class.negative]="modifier < 0"
-     class="characteristic-modifier"></div>
+     class="characteristic_modifier"></div>
 

@@ -2,8 +2,14 @@
 @import '~app/dungeon-dragons-client/src/styles/variables';
 
 .characteristic {
-  &-modifier {
+  &_saving-throw {
+    margin-top: 20px;
+    margin-right: 10px;
+    height: min-content;
+  }
+
+  &_modifier {
     right: 15px;
-    top: 25px;
+    top: 30px;
   }
 }

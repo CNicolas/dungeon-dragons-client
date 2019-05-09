@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { Player, Race } from '@dungeon-dragons-model/player'
+import { PlayerCharacteristics } from '@dungeon-dragons-model/player/player'
 import { Store } from '@ngxs/store'
 import { CreatePlayer } from '../shared/store/player'
 
@@ -24,14 +25,25 @@ export class CreatePlayerComponent {
   }
 
   createPlayer() {
+    const defaultPlayerCharacteristics: PlayerCharacteristics = {
+      strength: { characteristic: 'STRENGTH', value: 10, savingThrow: false },
+      dexterity: { characteristic: 'DEXTERITY', value: 10, savingThrow: false },
+      constitution: { characteristic: 'CONSTITUTION', value: 10, savingThrow: false },
+      intelligence: { characteristic: 'INTELLIGENCE', value: 10, savingThrow: false },
+      wisdom: { characteristic: 'WISDOM', value: 10, savingThrow: false },
+      charisma: { characteristic: 'CHARISMA', value: 10, savingThrow: false }
+    }
+
     const newPlayer: Player = {
-      ...this.createPlayerForm.getRawValue(),
-      strength: 10,
-      dexterity: 10,
-      constitution: 10,
-      intelligence: 10,
-      wisdom: 10,
-      charisma: 10
+      name: this.createPlayerForm.get('name').value,
+      race: this.createPlayerForm.get('race').value,
+      level: 1,
+      characteristics: defaultPlayerCharacteristics,
+      weapons: [],
+      equipments: [],
+      expandables: [],
+      otherItems: [],
+      actions: []
     }
     this.store.dispatch(new CreatePlayer(newPlayer))
   }

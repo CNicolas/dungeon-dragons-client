@@ -32,13 +32,13 @@
     <div fxFlex="30"
          fxFlex.xs="48"
          fxLayout="row wrap">
-      <dd-characteristic-control [characteristicControl]="playerForm.get('strength')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('strength')"
                                  placeholder="Force"
                                  fxFlex="100"></dd-characteristic-control>
-      <dd-characteristic-control [characteristicControl]="playerForm.get('dexterity')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('dexterity')"
                                  placeholder="Dextérité"
                                  fxFlex="100"></dd-characteristic-control>
-      <dd-characteristic-control [characteristicControl]="playerForm.get('constitution')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('constitution')"
                                  placeholder="Constitution"
                                  fxFlex="100"></dd-characteristic-control>
     </div>
@@ -48,13 +48,13 @@
     <div fxFlex="30"
          fxFlex.xs="48"
          fxLayout="row wrap">
-      <dd-characteristic-control [characteristicControl]="playerForm.get('intelligence')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('intelligence')"
                                  placeholder="Intelligence"
                                  fxFlex="100"></dd-characteristic-control>
-      <dd-characteristic-control [characteristicControl]="playerForm.get('wisdom')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('wisdom')"
                                  placeholder="Sagesse"
                                  fxFlex="100"></dd-characteristic-control>
-      <dd-characteristic-control [characteristicControl]="playerForm.get('charisma')"
+      <dd-characteristic-control [characteristicControl]="playerForm.get('characteristics').get('charisma')"
                                  placeholder="Charisme"
                                  fxFlex="100"></dd-characteristic-control>
     </div>
