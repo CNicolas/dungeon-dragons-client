@@ -16,7 +16,7 @@
           *matHeaderCellDef>Portée
       </th>
       <td mat-cell
-          *matCellDef="let weapon">{{weapon.range}}</td>
+          *matCellDef="let weapon">{{weapon.range | enumValue:weaponRanges}}</td>
     </ng-container>
 
     <ng-container matColumnDef="touch">
