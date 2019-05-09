@@ -41,6 +41,16 @@
              required>
     </mat-form-field>
 
+    <mat-form-field fxFlex
+                    fxFlex.xs="100">
+      <mat-select formControlName="characteristic"
+                  placeholder="Caractéristique"
+                  required>
+        <mat-option *ngFor="let characteristic of characteristics | enumKeyValue"
+                    [value]="characteristic.key">{{ characteristic.value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <mat-form-field fxFlex="100">
       <textarea matInput
                 formControlName="special"

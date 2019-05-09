@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { Weapon, WeaponRange } from '@dungeon-dragons-model/inventory'
+import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 import { filter } from 'rxjs/operators'
 import { WeaponEditionDialogComponent } from './weapon-edition-dialog/weapon-edition-dialog.component'
 
@@ -15,7 +16,8 @@ export class PlayerInventoryWeaponsComponent {
   @Output() update: EventEmitter<Weapon[]> = new EventEmitter()
 
   readonly weaponRanges: typeof WeaponRange = WeaponRange
-  readonly displayedColumns: string[] = ['name', 'range', 'touch', 'damage', 'special']
+  readonly characteristics: typeof Characteristic = Characteristic
+  readonly displayedColumns: string[] = ['name', 'range', 'touch', 'damage', 'characteristic', 'special']
 
   constructor(private readonly dialog: MatDialog) {
   }

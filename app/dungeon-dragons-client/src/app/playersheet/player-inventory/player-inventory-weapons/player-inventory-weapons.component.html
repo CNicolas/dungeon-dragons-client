@@ -35,6 +35,14 @@
           *matCellDef="let weapon">{{weapon.damage}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="characteristic">
+      <th mat-header-cell
+          *matHeaderCellDef>Caractéristique
+      </th>
+      <td mat-cell
+          *matCellDef="let weapon">{{weapon.characteristic | enumValue:characteristics}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="special">
       <th mat-header-cell
           *matHeaderCellDef>Special

@@ -5,6 +5,7 @@ export interface Weapon {
   range: typeof WeaponRange
   touch: number
   damage: number
+  characteristic: string
   special: string
 }
 
