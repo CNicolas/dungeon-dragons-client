@@ -9,6 +9,7 @@
 
     <ng-template matExpansionPanelContent>
       <dd-player-inventory-weapons [weapons]="player.weapons"
+                                   [player]="player"
                                    (update)="updatePlayerWeapons($event)"></dd-player-inventory-weapons>
     </ng-template>
   </mat-expansion-panel>

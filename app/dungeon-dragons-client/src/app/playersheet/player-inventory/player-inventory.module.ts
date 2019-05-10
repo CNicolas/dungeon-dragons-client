@@ -18,6 +18,7 @@ import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } f
 import { ExpandableEditionDialogComponent, PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
 import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
 import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from './player-inventory-weapons'
+import { WeaponRollDialogComponent } from './player-inventory-weapons/weapon-roll-dialog/weapon-roll-dialog.component'
 import { PlayerInventoryComponent } from './player-inventory.component'
 
 const components = [
@@ -32,7 +33,8 @@ const entryComponents = [
   EquipmentEditionDialogComponent,
   ExpandableEditionDialogComponent,
   OtherItemEditionDialogComponent,
-  WeaponEditionDialogComponent
+  WeaponEditionDialogComponent,
+  WeaponRollDialogComponent
 ]
 
 @NgModule({

@@ -4,9 +4,26 @@ table {
   width: 100%;
   margin-bottom: 10px;
 
+  .mat-column-menu {
+    width: 24px;
+    padding-right: 5px;
+  }
+
   @media (max-device-width: 480px) {
     .mat-column-special {
       display: none;
+    }
+
+    .mat-column-menu {
+      button {
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+
+        mat-icon {
+          font-size: 16px;
+        }
+      }
     }
   }
 

@@ -36,13 +36,6 @@ export class WeaponEditionDialogComponent {
     if (!!weapon) {
       this.weaponForm.patchValue(weapon)
 
-      // this.weaponForm.get('name').setValue(weapon.name)
-      // this.weaponForm.get('range').setValue(weapon.range)
-      // this.weaponForm.get('touch').setValue(weapon.touch)
-      // this.weaponForm.get('damage').setValue(weapon.damage)
-      // this.weaponForm.get('characteristic').setValue(weapon.characteristic)
-      // this.weaponForm.get('special').setValue(weapon.special)
-
       this.weapon = weapon
     }
   }
