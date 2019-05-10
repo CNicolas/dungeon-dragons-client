@@ -13,7 +13,10 @@
 
     <ng-container matColumnDef="range">
       <th mat-header-cell
-          *matHeaderCellDef>Portée
+          *matHeaderCellDef>
+        <span matTooltip="Portée"
+              class="fas fa-street-view"></span>
+        <span *ngIf="!isHandset">Portée</span>
       </th>
       <td mat-cell
           *matCellDef="let weapon">{{weapon.range | enumValue:weaponRanges}}</td>
@@ -21,7 +24,10 @@
 
     <ng-container matColumnDef="touch">
       <th mat-header-cell
-          *matHeaderCellDef>Toucher
+          *matHeaderCellDef>
+        <span matTooltip="Toucher"
+              class="fas fa-bullseye"></span>
+        <span *ngIf="!isHandset">Toucher</span>
       </th>
       <td mat-cell
           *matCellDef="let weapon">+{{weapon.touch}}</td>
@@ -29,7 +35,10 @@
 
     <ng-container matColumnDef="damage">
       <th mat-header-cell
-          *matHeaderCellDef>Dégâts
+          *matHeaderCellDef>
+        <span matTooltip="Dégâts"
+              class="fas fa-fist-raised"></span>
+        <span *ngIf="!isHandset">Dégâts</span>
       </th>
       <td mat-cell
           *matCellDef="let weapon">{{weapon.damage}}</td>
@@ -37,7 +46,10 @@
 
     <ng-container matColumnDef="characteristic">
       <th mat-header-cell
-          *matHeaderCellDef>Caractéristique
+          *matHeaderCellDef>
+        <span matTooltip="Caractéristique"
+              class="fas fa-address-book"></span>
+        <span *ngIf="!isHandset">Caractéristique</span>
       </th>
       <td mat-cell
           *matCellDef="let weapon">{{weapon.characteristic | enumValue:characteristics}}</td>

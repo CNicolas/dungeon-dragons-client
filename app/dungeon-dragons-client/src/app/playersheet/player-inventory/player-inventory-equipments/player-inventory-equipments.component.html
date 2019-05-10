@@ -13,7 +13,10 @@
 
     <ng-container matColumnDef="armor">
       <th mat-header-cell
-          *matHeaderCellDef>Classe d'armure
+          *matHeaderCellDef>
+        <span matTooltip="Classe d'armure"
+              class="fas fa-shield-alt"></span>
+        <span *ngIf="!isHandset">Classe d'armure</span>
       </th>
       <td mat-cell
           *matCellDef="let equipment">+{{equipment.armor}}</td>

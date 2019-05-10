@@ -1,8 +1,10 @@
+import { BreakpointObserver } from '@angular/cdk/layout'
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { Weapon, WeaponRange } from '@dungeon-dragons-model/inventory'
 import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 import { filter } from 'rxjs/operators'
+import { AbstractHandsetObserver } from '../../../core'
 import { WeaponEditionDialogComponent } from './weapon-edition-dialog/weapon-edition-dialog.component'
 
 @Component({
@@ -10,7 +12,7 @@ import { WeaponEditionDialogComponent } from './weapon-edition-dialog/weapon-edi
   templateUrl: './player-inventory-weapons.component.html',
   styleUrls: ['../../table.scss', './player-inventory-weapons.component.scss']
 })
-export class PlayerInventoryWeaponsComponent {
+export class PlayerInventoryWeaponsComponent extends AbstractHandsetObserver {
   @Input() weapons: Weapon[] = []
 
   @Output() update: EventEmitter<Weapon[]> = new EventEmitter()
@@ -19,7 +21,9 @@ export class PlayerInventoryWeaponsComponent {
   readonly characteristics: typeof Characteristic = Characteristic
   readonly displayedColumns: string[] = ['name', 'range', 'touch', 'damage', 'characteristic', 'special']
 
-  constructor(private readonly dialog: MatDialog) {
+  constructor(private readonly dialog: MatDialog,
+              breakpointObserver: BreakpointObserver) {
+    super(breakpointObserver)
   }
 
   openWeaponEditionDialog(weapon: Weapon, weaponIndex: number) {

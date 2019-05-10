@@ -18,4 +18,10 @@ table {
       transform: scale(1);
     }
   }
+
+  th {
+    span.fas {
+      margin-right: 5px;
+    }
+  }
 }

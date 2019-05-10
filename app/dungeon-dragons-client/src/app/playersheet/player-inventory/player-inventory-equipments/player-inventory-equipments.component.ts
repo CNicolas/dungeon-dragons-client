@@ -1,7 +1,9 @@
+import { BreakpointObserver } from '@angular/cdk/layout'
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { Equipment } from '@dungeon-dragons-model/inventory'
 import { filter } from 'rxjs/operators'
+import { AbstractHandsetObserver } from '../../../core'
 import { EquipmentEditionDialogComponent } from './equipment-edition-dialog/equipment-edition-dialog.component'
 
 @Component({
@@ -9,14 +11,16 @@ import { EquipmentEditionDialogComponent } from './equipment-edition-dialog/equi
   templateUrl: './player-inventory-equipments.component.html',
   styleUrls: ['../../table.scss', './player-inventory-equipments.component.scss']
 })
-export class PlayerInventoryEquipmentsComponent {
+export class PlayerInventoryEquipmentsComponent extends AbstractHandsetObserver {
   @Input() equipments: Equipment[] = []
 
   @Output() update: EventEmitter<Equipment[]> = new EventEmitter()
 
   readonly displayedColumns: string[] = ['name', 'armor', 'special']
 
-  constructor(private readonly dialog: MatDialog) {
+  constructor(private readonly dialog: MatDialog,
+              breakpointObserver: BreakpointObserver) {
+    super(breakpointObserver)
   }
 
   openEquipmentEditionDialog(equipment: Equipment, equipmentIndex: number) {

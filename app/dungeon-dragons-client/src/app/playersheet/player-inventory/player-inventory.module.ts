@@ -10,7 +10,8 @@ import {
   MatIconModule,
   MatInputModule,
   MatSelectModule,
-  MatTableModule
+  MatTableModule,
+  MatTooltipModule
 } from '@angular/material'
 import { PipesModule } from '../../shared/pipes/pipes.module'
 import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
@@ -49,6 +50,7 @@ const entryComponents = [
     MatInputModule,
     MatSelectModule,
     MatTableModule,
+    MatTooltipModule,
     PipesModule
   ]
 })
