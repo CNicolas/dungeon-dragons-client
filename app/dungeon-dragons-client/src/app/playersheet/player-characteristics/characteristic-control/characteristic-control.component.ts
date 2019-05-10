@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
-import { calculateModifier } from '@dungeon-dragons-model/player/characteristics.utils'
+import { calculateModifier, modifierToString } from '@dungeon-dragons-model/player/characteristics.utils'
 import { PlayerCharacteristic } from '@dungeon-dragons-model/player/player'
 import { AbstractSubscriptionsDestroyer } from '../../../core'
 
@@ -45,10 +45,6 @@ export class CharacteristicControlComponent extends AbstractSubscriptionsDestroy
   private setModifier(characteristic: number) {
     const newModifier: number = calculateModifier(characteristic)
 
-    if (newModifier > 0) {
-      this.modifier = `+${newModifier}`
-    } else {
-      this.modifier = `${newModifier}`
-    }
+    this.modifier = modifierToString(newModifier, true)
   }
 }

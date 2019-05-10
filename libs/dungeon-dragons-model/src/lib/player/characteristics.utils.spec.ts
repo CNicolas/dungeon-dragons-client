@@ -1,0 +1,32 @@
+import { calculateModifier } from '@dungeon-dragons-model/player/characteristics.utils'
+
+describe('Characteristics', () => {
+  describe('Utils', () => {
+    it('should calculateModifier', () => {
+      expect(calculateModifier(0)).toEqual(-5)
+      expect(calculateModifier(1)).toEqual(-5)
+      expect(calculateModifier(2)).toEqual(-4)
+      expect(calculateModifier(3)).toEqual(-4)
+      expect(calculateModifier(4)).toEqual(-3)
+      expect(calculateModifier(5)).toEqual(-3)
+      expect(calculateModifier(6)).toEqual(-2)
+      expect(calculateModifier(7)).toEqual(-2)
+      expect(calculateModifier(8)).toEqual(-1)
+      expect(calculateModifier(9)).toEqual(-1)
+      expect(calculateModifier(10)).toEqual(0)
+      expect(calculateModifier(11)).toEqual(0)
+      expect(calculateModifier(12)).toEqual(1)
+      expect(calculateModifier(13)).toEqual(1)
+      expect(calculateModifier(14)).toEqual(2)
+      expect(calculateModifier(15)).toEqual(2)
+      expect(calculateModifier(16)).toEqual(3)
+      expect(calculateModifier(17)).toEqual(3)
+      expect(calculateModifier(18)).toEqual(4)
+      expect(calculateModifier(19)).toEqual(4)
+      expect(calculateModifier(20)).toEqual(5)
+      expect(calculateModifier(21)).toEqual(5)
+      expect(calculateModifier(30)).toEqual(10)
+      expect(calculateModifier(40)).toEqual(15)
+    })
+  })
+})

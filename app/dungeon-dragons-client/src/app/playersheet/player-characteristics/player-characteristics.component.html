@@ -2,14 +2,14 @@
 
   <div fxLayout="row wrap">
     <mat-form-field fxFlex="30"
-                    fxFlex.xs="75">
+                    fxFlex.xs="100">
       <input matInput
              placeholder="Nom du personnage"
              formControlName="name">
     </mat-form-field>
 
     <mat-form-field fxFlex="10"
-                    fxFlex.xs="25">
+                    fxFlex.xs="50">
       <input matInput
              placeholder="Niveau"
              formControlName="level"
@@ -17,7 +17,16 @@
              min="1">
     </mat-form-field>
 
-    <mat-form-field fxFlex="20"
+    <mat-form-field fxFlex="10"
+                    fxFlex.xs="50">
+      <input matInput
+             placeholder="Bonus de maitrise"
+             formControlName="bonus"
+             type="number"
+             min="0">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="15"
                     fxFlex.xs="100">
       <mat-select formControlName="race"
                   placeholder="Race"

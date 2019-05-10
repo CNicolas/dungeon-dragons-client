@@ -1,12 +1,19 @@
-<h1 mat-dialog-title>Attaquer</h1>
+<h1 mat-dialog-title>{{weapon.name}}</h1>
 
-<mat-dialog-content fxLayout="row wrap">
+<mat-dialog-content>
+  <div>
+    Calcul : 1d20 {{characModifier | modifier:true}} ({{weapon.characteristic | enumValue:characteristics}})
+    {{player.bonus | modifier:true}} (Bonus de maîtrise)
+  </div>
+  <p [class.critical]="result.rolled[0] === 20">Résultat du dé : {{result.rolled}}</p>
+  <p>Résultat final : {{result.result}}</p>
 </mat-dialog-content>
 
 <mat-dialog-actions fxLayout="row wrap">
   <div fxFlex="100"
        fxLayoutAlign="end">
-    <button mat-button
+    <button mat-raised-button
+            color="primary"
             (click)="roll()">
       <span class="fas fa-dice-d20"></span>
       Lancer

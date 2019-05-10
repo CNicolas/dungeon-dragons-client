@@ -110,7 +110,17 @@
     "dungeon-dragons-model": {
       "root": "libs/dungeon-dragons-model",
       "sourceRoot": "libs/dungeon-dragons-model/src",
-      "projectType": "library"
+      "projectType": "library",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/dungeon-dragons-model/src/test.ts",
+            "tsConfig": "libs/dungeon-dragons-model/tsconfig.spec.json",
+            "karmaConfig": "libs/dungeon-dragons-model/karma.conf.js"
+          }
+        }
+      }
     },
     "dungeon-dragons-client-e2e": {
       "root": "e2e/",

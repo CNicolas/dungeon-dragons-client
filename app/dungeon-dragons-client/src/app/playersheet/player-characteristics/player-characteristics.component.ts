@@ -32,6 +32,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
     this.playerForm = formBuilder.group({
       name: ['', Validators.required],
       level: [null, Validators.required],
+      bonus: [null, Validators.required],
       race: [null, Validators.required],
       characteristics: formBuilder.group({
         strength: [null, Validators.required],
@@ -71,10 +72,7 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
 
   private savePlayer(): void {
     if (!deepEqual(this.extractPlayerFromForm(), this.player)) {
-      this.willUnsubscribe(
-        this.store.dispatch(new UpdatePlayer(this.extractPlayerFromForm()))
-          .subscribe(() => this.snackBarHelper.success('Sauvegarde effectuée'))
-      )
+      this.store.dispatch(new UpdatePlayer(this.extractPlayerFromForm()))
     }
   }
 

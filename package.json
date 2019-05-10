@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "test:once": "ng test --watch=false",
+    "test:once": "ng test dungeon-dragons-model --watch=false  && ng test dungeon-dragons-client --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -27,6 +27,7 @@
     "@ngxs/store": "^3.4.3",
     "core-js": "^2.5.4",
     "fast-deep-equal": "^2.0.1",
+    "roll": "^1.2.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

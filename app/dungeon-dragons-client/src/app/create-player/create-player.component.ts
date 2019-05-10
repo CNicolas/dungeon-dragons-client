@@ -38,6 +38,7 @@ export class CreatePlayerComponent {
       name: this.createPlayerForm.get('name').value,
       race: this.createPlayerForm.get('race').value,
       level: 1,
+      bonus: 0,
       characteristics: defaultPlayerCharacteristics,
       weapons: [],
       equipments: [],

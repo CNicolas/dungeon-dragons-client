@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { CharacteristicModifierStringPipe } from './characteristic-modifier-string.pipe'
 import { EnumKeyValuePipe } from './enum-key-value.pipe'
 import { EnumValuePipe } from './enum-value.pipe'
 import { SortPipe } from './sort.pipe'
@@ -6,7 +7,8 @@ import { SortPipe } from './sort.pipe'
 const pipes = [
   SortPipe,
   EnumKeyValuePipe,
-  EnumValuePipe
+  EnumValuePipe,
+  CharacteristicModifierStringPipe
 ]
 
 @NgModule({
