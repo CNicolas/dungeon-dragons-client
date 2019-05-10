@@ -1,12 +1,13 @@
 <h1 mat-dialog-title>{{weapon.name}}</h1>
 
 <mat-dialog-content>
-  <div>
+  <p>
     Calcul : 1d20 {{characModifier | modifier:true}} ({{weapon.characteristic | enumValue:characteristics}})
     {{player.bonus | modifier:true}} (Bonus de maîtrise)
-  </div>
+  </p>
   <p [class.critical]="result.rolled[0] === 20">Résultat du dé : {{result.rolled}}</p>
-  <p>Résultat final : {{result.result}}</p>
+  <p>Résultat final : <span>{{result.result}}</span></p>
+  <p>Dégâts : {{damageCalcul}} = <span class="final-result">{{damage}}</span></p>
 </mat-dialog-content>
 
 <mat-dialog-actions fxLayout="row wrap">
