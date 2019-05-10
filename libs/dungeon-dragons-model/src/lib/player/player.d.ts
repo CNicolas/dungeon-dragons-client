@@ -1,5 +1,6 @@
 import { Action } from '@dungeon-dragons-model/actions'
 import { Equipment, Expandable, OtherItem, Weapon } from '@dungeon-dragons-model/inventory'
+import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 
 export interface Player {
   name: string
@@ -26,7 +27,7 @@ export interface PlayerCharacteristics {
 }
 
 export interface PlayerCharacteristic {
-  characteristic: string
+  characteristic: keyof typeof Characteristic
   value: number
   savingThrow: boolean
 }

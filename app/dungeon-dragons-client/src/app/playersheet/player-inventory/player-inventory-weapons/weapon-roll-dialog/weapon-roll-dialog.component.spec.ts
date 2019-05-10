@@ -11,7 +11,9 @@ import {
   MatSelectModule
 } from '@angular/material'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { DdCoreModule } from '../../../../core/dd-core.module'
 import { PipesModule } from '../../../../shared/pipes/pipes.module'
+import { TESTING_PLAYER } from '../../../../shared/store/player'
 import { WeaponRollDialogComponent } from './weapon-roll-dialog.component'
 
 @NgModule({
@@ -39,6 +41,7 @@ describe('WeaponRollDialogComponent', () => {
         MatIconModule,
         MatInputModule,
         MatSelectModule,
+        DdCoreModule,
         PipesModule,
         WeaponRollDialogTestingModule
       ]
@@ -49,6 +52,8 @@ describe('WeaponRollDialogComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WeaponRollDialogComponent)
     component = fixture.componentInstance
+    component.player = TESTING_PLAYER
+    component.weapon = { name: 'WeaponName', range: 'ENGAGED', touch: 0, damage: 0, characteristic: 'STRENGTH' }
     fixture.detectChanges()
   })
 

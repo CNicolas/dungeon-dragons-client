@@ -2,11 +2,11 @@ import { WeaponRange } from '@dungeon-dragons-model/inventory/range.enum'
 
 export interface Weapon {
   name: string
-  range: typeof WeaponRange
+  range: keyof typeof WeaponRange
   touch: number
   damage: number
   characteristic: string
-  special: string
+  special?: string
 }
 
 export interface Equipment {

@@ -5,6 +5,7 @@ import { Weapon } from '@dungeon-dragons-model/inventory'
 import { Player } from '@dungeon-dragons-model/player'
 import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 import { calculateModifier, getPlayerCharacteristic, modifierToString } from '@dungeon-dragons-model/player/characteristics.utils'
+import { NGXLogger } from 'ngx-logger'
 import DiceRoller from 'roll'
 
 @Component({
@@ -22,7 +23,8 @@ export class WeaponRollDialogComponent implements OnInit {
   readonly characteristics: typeof Characteristic = Characteristic
   readonly diceRoller: DiceRoller = new DiceRoller()
 
-  constructor(@Inject(MAT_DIALOG_DATA) data: { player: Player, weapon: Weapon }) {
+  constructor(private readonly logger: NGXLogger,
+              @Inject(MAT_DIALOG_DATA) data: { player: Player, weapon: Weapon }) {
     this.player = data.player
     this.weapon = data.weapon
   }
@@ -37,7 +39,7 @@ export class WeaponRollDialogComponent implements OnInit {
     const bonusModifier: string = modifierToString(this.player.bonus, true)
     const rollString = `1d20${characteristicModifier}${bonusModifier}`
 
-    console.log(rollString)
+    this.logger.log(rollString)
 
     this.result = this.diceRoller.roll(rollString)
   }

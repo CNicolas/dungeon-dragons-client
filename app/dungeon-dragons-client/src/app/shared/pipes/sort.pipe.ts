@@ -1,5 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core'
 
+const compareObjectsByField = (field: string) => <T>(object1: T, object2: T): number => {
+  if (object1[field] < object2[field]) {
+    return -1
+  }
+  if (object1[field] > object2[field]) {
+    return 1
+  }
+  return 0
+}
+
 @Pipe({
   name: 'sort'
 })
@@ -11,14 +21,4 @@ export class SortPipe<T extends {}> implements PipeTransform {
 
     throw new Error('Missing field parameter')
   }
-}
-
-const compareObjectsByField = (field: string) => <T>(object1: T, object2: T): number => {
-  if (object1[field] < object2[field]) {
-    return -1
-  }
-  if (object1[field] > object2[field]) {
-    return 1
-  }
-  return 0
 }
