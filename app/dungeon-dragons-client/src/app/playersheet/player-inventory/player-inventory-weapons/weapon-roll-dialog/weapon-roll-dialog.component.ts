@@ -19,7 +19,6 @@ export class WeaponRollDialogComponent implements OnInit {
 
   characModifier: number
   result: DicesRollResults
-  damageCalcul: string
   damage: number
 
   readonly characteristics: typeof Characteristic = Characteristic
@@ -39,12 +38,12 @@ export class WeaponRollDialogComponent implements OnInit {
   roll() {
     const characteristicModifierString: string = modifierToString(this.characModifier, true)
     const bonusModifier: string = modifierToString(this.player.bonus, true)
-    const rollString = `1d20${characteristicModifierString}${bonusModifier}`
+    const touchModifier: string = modifierToString(this.weapon.touch, true)
+    const rollString = `1d20${characteristicModifierString}${touchModifier}${bonusModifier}`
 
     this.logger.log(rollString)
 
     this.result = this.diceRoller.roll(rollString)
-    this.damageCalcul = `${this.weapon.damage}${characteristicModifierString}${bonusModifier}`
     this.damage = this.weapon.damage + this.characModifier + this.player.bonus
   }
 }

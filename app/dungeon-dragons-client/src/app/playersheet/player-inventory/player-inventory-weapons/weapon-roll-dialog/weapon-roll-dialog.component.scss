@@ -1,8 +1,26 @@
-.critical,
-.final-damage {
+//noinspection CssUnknownTarget
+@import '~app/dungeon-dragons-client/src/styles/variables';
+
+.critical {
   font-weight: bold;
 }
 
 .final-result {
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 20px;
+  color: $accent-color
+}
+
+.roll-result {
+  margin-bottom: 5px;
+}
+
+ul.calcul {
+  list-style: none;
+  padding-inline-start: 15px;
+  margin: 0.1em;
+}
+
+.mat-dialog-actions {
+  margin-top: 20px;
 }
