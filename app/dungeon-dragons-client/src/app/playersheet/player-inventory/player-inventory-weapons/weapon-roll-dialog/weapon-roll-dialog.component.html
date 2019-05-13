@@ -6,7 +6,7 @@
     <ul class="calcul">
       <li [class.critical]="result.rolled[0] === 20">{{result.rolled}} (jet)</li>
       <li>{{characModifier | modifier:true}} ({{weapon.characteristic | enumValue:characteristics}})</li>
-      <li>{{weapon.touch | modifier:true}} (Bonus de l'arme)</li>
+      <li>{{weapon.touch | modifier:true}} (Bonus au toucher de l'arme)</li>
       <li>{{player.bonus | modifier:true}} (Bonus de maîtrise)</li>
     </ul>
   </div>
@@ -17,6 +17,8 @@
       <li>{{weapon.damage | modifier:true}} (Dégâts de l'arme)</li>
       <li>{{characModifier | modifier:true}} ({{weapon.characteristic | enumValue:characteristics}})</li>
       <li>{{player.bonus | modifier:true}} (Bonus de maîtrise)</li>
+      <li *ngIf="weapon.damageCategory === 'MAGICAL'">{{player.magicalDamage | modifier:true}} (Dégâts magiques)</li>
+      <li *ngIf="weapon.damageCategory === 'PHYSICAL'">{{player.physicalDamage | modifier:true}} (Dégâts physiques)</li>
     </ul>
   </div>
 </mat-dialog-content>

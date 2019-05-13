@@ -35,6 +35,26 @@
                     [value]="race.key">{{ race.value }}</mat-option>
       </mat-select>
     </mat-form-field>
+
+
+    <mat-form-field fxFlex="10"
+                    fxFlex.xs="50">
+      <input matInput
+             placeholder="Dégâts physiques"
+             formControlName="physicalDamage"
+             type="number"
+             min="0">
+    </mat-form-field>
+
+
+    <mat-form-field fxFlex="10"
+                    fxFlex.xs="50">
+      <input matInput
+             placeholder="Dégâts magiques"
+             formControlName="magicalDamage"
+             type="number"
+             min="0">
+    </mat-form-field>
   </div>
 
   <div fxLayout="row wrap">

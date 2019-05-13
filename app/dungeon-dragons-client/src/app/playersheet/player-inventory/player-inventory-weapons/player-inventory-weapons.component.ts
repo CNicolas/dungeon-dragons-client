@@ -2,6 +2,8 @@ import { BreakpointObserver } from '@angular/cdk/layout'
 import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { Weapon, WeaponRange } from '@dungeon-dragons-model/inventory'
+import { DamageType } from '@dungeon-dragons-model/inventory/damage-type.enum'
+import { getDamageCategoryByType } from '@dungeon-dragons-model/inventory/weapons.utils'
 import { Player } from '@dungeon-dragons-model/player'
 import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 import { filter } from 'rxjs/operators'
@@ -20,9 +22,14 @@ export class PlayerInventoryWeaponsComponent extends AbstractHandsetObserver {
 
   @Output() update: EventEmitter<Weapon[]> = new EventEmitter()
 
+  get dialogMaxWidth(): string {
+    return this.isHandset ? '80vw' : '50vw'
+  }
+
   readonly weaponRanges: typeof WeaponRange = WeaponRange
   readonly characteristics: typeof Characteristic = Characteristic
-  readonly displayedColumns: string[] = ['name', 'range', 'touch', 'damage', 'characteristic', 'special', 'menu']
+  readonly damageTypes: typeof DamageType = DamageType
+  readonly displayedColumns: string[] = ['name', 'range', 'touch', 'damage', 'damageType', 'characteristic', 'special', 'menu']
 
   constructor(private readonly dialog: MatDialog,
               breakpointObserver: BreakpointObserver) {
@@ -32,7 +39,8 @@ export class PlayerInventoryWeaponsComponent extends AbstractHandsetObserver {
   openWeaponEditionDialog(weapon: Weapon, weaponIndex: number) {
     const weaponEditionDialog = this.dialog.open(WeaponEditionDialogComponent, {
       autoFocus: false,
-      data: { weapon }
+      data: { weapon },
+      maxWidth: this.dialogMaxWidth
     })
 
     weaponEditionDialog.afterClosed()
@@ -41,6 +49,9 @@ export class PlayerInventoryWeaponsComponent extends AbstractHandsetObserver {
         if (newWeapon === -1) {
           this.weapons.splice(weaponIndex, 1)
         } else {
+          if (!!!newWeapon.damageCategory) {
+            newWeapon.damageCategory = getDamageCategoryByType(newWeapon.damageType)
+          }
           this.weapons[weaponIndex] = newWeapon
         }
 
@@ -49,11 +60,16 @@ export class PlayerInventoryWeaponsComponent extends AbstractHandsetObserver {
   }
 
   openWeaponCreationDialog() {
-    const weaponEditionDialog = this.dialog.open(WeaponEditionDialogComponent)
+    const weaponEditionDialog = this.dialog.open(WeaponEditionDialogComponent, {
+      maxWidth: this.dialogMaxWidth
+    })
 
     weaponEditionDialog.afterClosed()
       .pipe(filter((newWeapon: Weapon) => !!newWeapon))
       .subscribe((newWeapon: Weapon) => {
+        if (!!!newWeapon.damageCategory) {
+          newWeapon.damageCategory = getDamageCategoryByType(newWeapon.damageType)
+        }
         this.update.emit([...this.weapons, newWeapon])
       })
   }

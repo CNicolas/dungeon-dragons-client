@@ -7,6 +7,8 @@ export interface Player {
   race: string
   level: number
   bonus: number
+  physicalDamage: number
+  magicalDamage: number
   characteristics: PlayerCharacteristics
   weapons: Weapon[]
   equipments: Equipment[]

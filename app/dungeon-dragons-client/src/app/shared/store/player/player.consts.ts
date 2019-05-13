@@ -6,6 +6,8 @@ export const TESTING_PLAYER: Player = {
   race: 'DRAGONBORN',
   level: 1,
   bonus: 0,
+  physicalDamage: 0,
+  magicalDamage: 0,
   characteristics: {
     strength: { characteristic: 'STRENGTH', value: 10, savingThrow: false },
     dexterity: { characteristic: 'DEXTERITY', value: 10, savingThrow: false },

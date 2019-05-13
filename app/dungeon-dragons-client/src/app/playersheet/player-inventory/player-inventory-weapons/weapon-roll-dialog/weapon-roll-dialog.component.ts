@@ -39,11 +39,14 @@ export class WeaponRollDialogComponent implements OnInit {
     const characteristicModifierString: string = modifierToString(this.characModifier, true)
     const bonusModifier: string = modifierToString(this.player.bonus, true)
     const touchModifier: string = modifierToString(this.weapon.touch, true)
-    const rollString = `1d20${characteristicModifierString}${touchModifier}${bonusModifier}`
 
+    const rollString = `1d20${characteristicModifierString}${touchModifier}${bonusModifier}`
+    this.result = this.diceRoller.roll(rollString)
     this.logger.log(rollString)
 
-    this.result = this.diceRoller.roll(rollString)
-    this.damage = this.weapon.damage + this.characModifier + this.player.bonus
+    const bonusDamage: number = this.weapon.damageCategory === 'MAGICAL'
+      ? this.player.magicalDamage
+      : this.player.physicalDamage
+    this.damage = this.weapon.damage + this.characModifier + this.player.bonus + bonusDamage
   }
 }

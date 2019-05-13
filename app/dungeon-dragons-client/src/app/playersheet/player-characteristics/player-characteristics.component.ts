@@ -34,6 +34,8 @@ export class PlayerCharacteristicsComponent extends AbstractSubscriptionsDestroy
       level: [null, Validators.required],
       bonus: [null, Validators.required],
       race: [null, Validators.required],
+      physicalDamage: [0],
+      magicalDamage: [0],
       characteristics: formBuilder.group({
         strength: [null, Validators.required],
         dexterity: [null, Validators.required],

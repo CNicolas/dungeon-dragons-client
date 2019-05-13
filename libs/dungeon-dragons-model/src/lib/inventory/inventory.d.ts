@@ -1,3 +1,5 @@
+import { DamageCategory } from '@dungeon-dragons-model/inventory/damage-category.enum'
+import { DamageType } from '@dungeon-dragons-model/inventory/damage-type.enum'
 import { WeaponRange } from '@dungeon-dragons-model/inventory/range.enum'
 
 export interface Weapon {
@@ -5,6 +7,8 @@ export interface Weapon {
   range: keyof typeof WeaponRange
   touch: number
   damage: number
+  damageType: keyof typeof DamageType,
+  damageCategory?: keyof typeof DamageCategory,
   characteristic: string
   special?: string
 }

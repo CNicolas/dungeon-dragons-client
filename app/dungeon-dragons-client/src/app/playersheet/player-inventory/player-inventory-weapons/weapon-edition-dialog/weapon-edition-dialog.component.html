@@ -3,7 +3,7 @@
   <h1 mat-dialog-title>Arme</h1>
 
   <mat-dialog-content fxLayout="row wrap">
-    <mat-form-field fxFlex
+    <mat-form-field fxFlex="40"
                     fxFlex.xs="100">
       <input matInput
              formControlName="name"
@@ -11,7 +11,7 @@
              required>
     </mat-form-field>
 
-    <mat-form-field fxFlex
+    <mat-form-field fxFlex="30"
                     fxFlex.xs="100">
       <mat-select formControlName="range"
                   placeholder="Portée"
@@ -21,7 +21,17 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field fxFlex
+    <mat-form-field fxFlex="30"
+                    fxFlex.xs="100">
+      <mat-select formControlName="characteristic"
+                  placeholder="Caractéristique"
+                  required>
+        <mat-option *ngFor="let characteristic of characteristics | enumKeyValue"
+                    [value]="characteristic.key">{{ characteristic.value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="20"
                     fxFlex.xs="50">
       <input matInput
              formControlName="touch"
@@ -31,7 +41,7 @@
              required>
     </mat-form-field>
 
-    <mat-form-field fxFlex
+    <mat-form-field fxFlex="20"
                     fxFlex.xs="50">
       <input matInput
              formControlName="damage"
@@ -41,13 +51,22 @@
              required>
     </mat-form-field>
 
-    <mat-form-field fxFlex
+    <mat-form-field fxFlex="30"
                     fxFlex.xs="100">
-      <mat-select formControlName="characteristic"
-                  placeholder="Caractéristique"
+      <mat-select formControlName="damageType"
+                  placeholder="Type de dégâts"
                   required>
-        <mat-option *ngFor="let characteristic of characteristics | enumKeyValue"
-                    [value]="characteristic.key">{{ characteristic.value }}</mat-option>
+        <mat-option *ngFor="let damageType of damageTypes | enumKeyValue"
+                    [value]="damageType.key">{{ damageType.value }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="30"
+                    fxFlex.xs="100">
+      <mat-select formControlName="damageCategory"
+                  placeholder="Catégorie">
+        <mat-option *ngFor="let damageCategory of damageCategories | enumKeyValue"
+                    [value]="damageCategory.key">{{ damageCategory.value }}</mat-option>
       </mat-select>
     </mat-form-field>
 

@@ -44,6 +44,17 @@
           *matCellDef="let weapon">{{weapon.damage}}</td>
     </ng-container>
 
+    <ng-container matColumnDef="damageType">
+      <th mat-header-cell
+          *matHeaderCellDef>
+        <span matTooltip="Type de dégâts"
+              class="fas fa-tools"></span>
+        <span *ngIf="!isHandset">Type de dégâts</span>
+      </th>
+      <td mat-cell
+          *matCellDef="let weapon">{{weapon.damageType | enumValue:damageTypes}}</td>
+    </ng-container>
+
     <ng-container matColumnDef="characteristic">
       <th mat-header-cell
           *matHeaderCellDef>
