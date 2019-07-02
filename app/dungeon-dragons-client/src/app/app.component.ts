@@ -1,10 +1,13 @@
 import { BreakpointObserver } from '@angular/cdk/layout'
 import { Component, ViewChild } from '@angular/core'
 import { MatSidenav } from '@angular/material'
+import { DicesRollResults } from '@dungeon-dragons-model/dice'
 import { Player } from '@dungeon-dragons-model/player'
 import { Select } from '@ngxs/store'
+import DiceRoller from 'roll'
 import { Observable } from 'rxjs'
 import { AbstractHandsetObserver } from './core'
+import { SnackBarHelper } from './shared/helpers/snack-bar.helper'
 import { CoreState } from './shared/store/core/core.state'
 import { PlayerState } from './shared/store/player'
 
@@ -19,10 +22,14 @@ export class AppComponent extends AbstractHandsetObserver {
   @Select(PlayerState.player) player$: Observable<Player>
 
   player: Player
+  rollText: string
 
   @ViewChild('drawer') private drawer: MatSidenav
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  readonly diceRoller: DiceRoller = new DiceRoller()
+
+  constructor(private readonly snackBarHelper: SnackBarHelper,
+              breakpointObserver: BreakpointObserver) {
     super(breakpointObserver)
 
     this.willUnsubscribe(
@@ -30,9 +37,14 @@ export class AppComponent extends AbstractHandsetObserver {
     )
   }
 
-  public closeDrawer(): void {
+  closeDrawer(): void {
     if (this.isHandset) {
       this.drawer.toggle()
     }
+  }
+
+  roll() {
+    const result: DicesRollResults = this.diceRoller.roll(this.rollText)
+    this.snackBarHelper.success(`${result.rolled}`)
   }
 }

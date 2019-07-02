@@ -42,7 +42,18 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <div routerLink="/"
-           matRipple>{{ toolbarTitle$ | async }}</div>
+           matRipple
+           class="toolbar_title">{{ toolbarTitle$ | async }}</div>
+
+      <!-- FIXME remove or change-->
+      <mat-form-field class="roll_form-field">
+        <input [(ngModel)]="rollText"
+               matInput
+               class="roll_input" />
+      </mat-form-field>
+      <button mat-icon-button
+              (click)="roll()"
+              class="roll_button"><span class="fas fa-dice-d20"></span></button>
     </mat-toolbar>
 
     <div class="page_content">

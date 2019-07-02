@@ -15,3 +15,16 @@
     }
   }
 }
+
+.toolbar_title {
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.roll {
+  &_form-field {
+    margin-left: 10px;
+    width: 50%;
+  }
+}
