@@ -1,8 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
-import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material'
+import { FormsModule } from '@angular/forms'
+import {
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterTestingModule } from '@angular/router/testing'
 import { NgxsModule } from '@ngxs/store'
 import { AppComponent } from './app.component'
+import { SnackBarHelper } from './shared/helpers/snack-bar.helper'
 
 describe('AppComponent', () => {
   let component: AppComponent
@@ -12,13 +23,19 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       declarations: [AppComponent],
       imports: [
+        NoopAnimationsModule,
         RouterTestingModule,
-        MatSidenavModule,
-        MatToolbarModule,
+        FormsModule,
+        MatFormFieldModule,
         MatIconModule,
+        MatInputModule,
         MatListModule,
+        MatSidenavModule,
+        MatSnackBarModule,
+        MatToolbarModule,
         NgxsModule.forRoot([], { developmentMode: true })
-      ]
+      ],
+      providers: [SnackBarHelper]
     }).compileComponents()
   }))
 

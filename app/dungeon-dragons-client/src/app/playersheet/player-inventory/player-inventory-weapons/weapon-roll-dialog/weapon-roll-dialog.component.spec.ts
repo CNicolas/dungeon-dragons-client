@@ -53,7 +53,7 @@ describe('WeaponRollDialogComponent', () => {
     fixture = TestBed.createComponent(WeaponRollDialogComponent)
     component = fixture.componentInstance
     component.player = TESTING_PLAYER
-    component.weapon = { name: 'WeaponName', range: 'ENGAGED', touch: 0, damage: 0, characteristic: 'STRENGTH' }
+    component.weapon = { name: 'WeaponName', range: 'ENGAGED', touch: 0, damage: 0, damageType: 'SLASHING', characteristic: 'STRENGTH' }
     fixture.detectChanges()
   })
 

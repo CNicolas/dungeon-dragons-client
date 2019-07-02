@@ -24,7 +24,7 @@ export class AppComponent extends AbstractHandsetObserver {
   player: Player
   rollText: string
 
-  @ViewChild('drawer') private drawer: MatSidenav
+  @ViewChild('drawer', { static: true }) private drawer: MatSidenav
 
   readonly diceRoller: DiceRoller = new DiceRoller()
 
