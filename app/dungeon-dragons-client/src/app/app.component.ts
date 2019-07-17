@@ -45,6 +45,6 @@ export class AppComponent extends AbstractHandsetObserver {
 
   roll() {
     const result: DicesRollResults = this.diceRoller.roll(this.rollText)
-    this.snackBarHelper.success(`${result.rolled}`)
+    this.snackBarHelper.success(`${result.rolled} = ${result.result}`)
   }
 }
