@@ -16,7 +16,7 @@ import {
 import { PipesModule } from '../../shared/pipes/pipes.module'
 import { EquipmentEditionDialogComponent, PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
 import { ExpandableEditionDialogComponent, PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
-import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
+import { OtherItemEditionDialogComponent, PlayerInventoryOtherItemsComponent } from './player-inventory-other-items'
 import { PlayerInventoryWeaponsComponent, WeaponEditionDialogComponent } from './player-inventory-weapons'
 import { WeaponRollDialogComponent } from './player-inventory-weapons/weapon-roll-dialog/weapon-roll-dialog.component'
 import { PlayerInventoryComponent } from './player-inventory.component'

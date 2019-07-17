@@ -4,9 +4,8 @@ import { MAT_DIALOG_DATA } from '@angular/material'
 import { OtherItem } from '@dungeon-dragons-model/inventory'
 
 @Component({
-  selector: 'dd-otheritem-edition-dialog',
-  templateUrl: './otheritem-edition-dialog.component.html',
-  styleUrls: ['./otheritem-edition-dialog.component.scss']
+  templateUrl: './other-item-edition-dialog.component.html',
+  styleUrls: ['./other-item-edition-dialog.component.scss']
 })
 export class OtherItemEditionDialogComponent {
   otherItem: OtherItem | null = null

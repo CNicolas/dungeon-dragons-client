@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { MatDialogModule, MatIconModule, MatTableModule } from '@angular/material'
-import { PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems.component'
+import { PlayerInventoryOtherItemsComponent } from './player-inventory-other-items.component'
 
 describe('PlayerInventoryOtherItemsComponent', () => {
   let component: PlayerInventoryOtherItemsComponent

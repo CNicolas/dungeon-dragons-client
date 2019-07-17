@@ -2,12 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 import { MatDialog } from '@angular/material'
 import { OtherItem } from '@dungeon-dragons-model/inventory'
 import { filter } from 'rxjs/operators'
-import { OtherItemEditionDialogComponent } from './otherItem-edition-dialog/otherItem-edition-dialog.component'
+import { OtherItemEditionDialogComponent } from './other-item-edition-dialog/other-item-edition-dialog.component'
 
 @Component({
-  selector: 'dd-player-inventory-otheritems',
-  templateUrl: './player-inventory-otherItems.component.html',
-  styleUrls: ['../../table.scss', './player-inventory-otherItems.component.scss']
+  selector: 'dd-player-inventory-other-items',
+  templateUrl: './player-inventory-other-items.component.html',
+  styleUrls: ['../../table.scss', './player-inventory-other-items.component.scss']
 })
 export class PlayerInventoryOtherItemsComponent {
   @Input() otherItems: OtherItem[] = []

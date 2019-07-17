@@ -15,7 +15,7 @@ import { NgxsModule } from '@ngxs/store'
 import { PipesModule } from '../../shared/pipes/pipes.module'
 import { PlayerInventoryEquipmentsComponent } from './player-inventory-equipments'
 import { PlayerInventoryExpandablesComponent } from './player-inventory-expandables'
-import { PlayerInventoryOtherItemsComponent } from './player-inventory-otheritems'
+import { PlayerInventoryOtherItemsComponent } from './player-inventory-other-items'
 import { PlayerInventoryWeaponsComponent } from './player-inventory-weapons'
 import { PlayerInventoryComponent } from './player-inventory.component'
 
