@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 import { PlayerCharacteristicsComponent } from './player-characteristics/player-characteristics.component'
 import { PlayerInventoryComponent } from './player-inventory/player-inventory.component'
-import { PlayerActionsComponent } from './player-actions/player-actions/player-actions.component'
+import { PlayerActionsComponent } from './player-actions/player-actions.component'
+import { PlayerAttacksComponent } from './player-attacks/player-attacks.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'actions',
     component: PlayerActionsComponent
+  },
+  {
+    path: 'attacks',
+    component: PlayerAttacksComponent
   },
   {
     path: 'inventory',

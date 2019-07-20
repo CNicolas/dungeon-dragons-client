@@ -14,8 +14,8 @@ import {
   MatTableModule,
   MatTooltipModule
 } from '@angular/material'
-import { ActionEditionDialogComponent } from './player-actions/action-edition-dialog/action-edition-dialog.component'
-import { PlayerActionsComponent } from './player-actions/player-actions.component'
+import { ActionEditionDialogComponent } from './action-edition-dialog/action-edition-dialog.component'
+import { PlayerActionsComponent } from './player-actions.component'
 
 @NgModule({
   declarations: [PlayerActionsComponent, ActionEditionDialogComponent],

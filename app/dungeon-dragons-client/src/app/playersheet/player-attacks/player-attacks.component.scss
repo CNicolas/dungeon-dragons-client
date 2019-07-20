@@ -1,0 +1,47 @@
+//noinspection CssUnknownTarget
+@import '~app/dungeon-dragons-client/src/styles/variables';
+@import '~@angular/material/theming';
+
+.actions {
+  margin-bottom: 10px;
+
+  .action {
+    @include mat-elevation(1);
+
+    mat-grid-tile-header, mat-grid-tile-footer {
+      background-color: transparent;
+      color: $primary-color-dark
+    }
+
+    mat-grid-tile-footer {
+      height: 32px;
+    }
+
+    &_name {
+      font-size: 20px;
+    }
+
+    &_menu {
+      right: -10px;
+    }
+
+    &_type {
+      font-size: 14px;
+      color: $primary-color;
+      font-style: italic;
+    }
+
+    &_effect {
+      margin: 5px;
+      text-align: center;
+    }
+
+    &_level {
+
+    }
+
+    &_cooldown {
+      font-size: 18px;
+    }
+  }
+}

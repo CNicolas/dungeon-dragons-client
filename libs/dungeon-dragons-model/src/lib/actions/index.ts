@@ -1,1 +1,1 @@
-export { Action } from './action'
+export { Action, Attack } from './action'

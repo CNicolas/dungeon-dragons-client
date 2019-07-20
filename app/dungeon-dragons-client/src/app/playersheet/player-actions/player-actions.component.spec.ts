@@ -10,7 +10,7 @@ import {
 } from '@angular/material'
 import { Store } from '@ngxs/store'
 import { of } from 'rxjs'
-import { PlayerStoreTestingModule, TESTING_PLAYER } from '../../../shared/store/player'
+import { PlayerStoreTestingModule, TESTING_PLAYER } from '../../shared/store/player'
 import { PlayerActionsComponent } from './player-actions.component'
 
 describe('PlayerActionsComponent', () => {

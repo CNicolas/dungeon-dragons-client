@@ -1,3 +1,5 @@
+import { Weapon } from "@dungeon-dragons-model/inventory";
+
 export interface Action {
   name: string
   type: string
@@ -5,3 +7,5 @@ export interface Action {
   cooldown: number
   effect: string
 }
+
+export type Attack = Weapon

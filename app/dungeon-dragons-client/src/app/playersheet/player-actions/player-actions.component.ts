@@ -6,8 +6,8 @@ import { Player } from '@dungeon-dragons-model/player'
 import { Select, Store } from '@ngxs/store'
 import { Observable } from 'rxjs'
 import { filter } from 'rxjs/operators'
-import { AbstractHandsetObserver } from '../../../core'
-import { PlayerState, UpdatePlayer } from '../../../shared/store/player'
+import { AbstractHandsetObserver } from '../../core'
+import { PlayerState, UpdatePlayer } from '../../shared/store/player'
 import { ActionEditionDialogComponent } from './action-edition-dialog/action-edition-dialog.component'
 
 @Component({

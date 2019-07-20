@@ -1,4 +1,4 @@
-import { Action } from '@dungeon-dragons-model/actions'
+import { Action, Attack } from '@dungeon-dragons-model/actions'
 import { Equipment, Expandable, OtherItem, Weapon } from '@dungeon-dragons-model/inventory'
 import { Characteristic } from '@dungeon-dragons-model/player/characteristic.enum'
 
@@ -10,6 +10,7 @@ export interface Player {
   physicalDamage: number
   magicalDamage: number
   characteristics: PlayerCharacteristics
+  attacks?: Attack[]
   weapons: Weapon[]
   equipments: Equipment[]
   expandables: Expandable[]
